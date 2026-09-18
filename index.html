@@ -6,11 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kazakhstan IELTS | Учите английский эффективнее</title>
   <meta name="description" content="Kazakhstan IELTS — это локальная программа обучения английскому и подготовки к IELTS со структурированными уроками, прозрачной оплатой и реальными отзывами студентов." />
+  <link rel="icon" type="image/png" href="img/Logo.png" />
 
-  <!-- Tailwind CSS v2 -->
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Tailwind CSS (JIT via CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+              400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8',
+              800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
+            },
+            accent: {
+              50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 400: '#fbbf24',
+              500: '#f59e0b', 600: '#d97706', 700: '#b45309'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 40px -12px rgba(30, 58, 138, 0.18)',
+            card: '0 8px 30px -10px rgba(15, 23, 42, 0.10)'
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- Alpine.js v3 -->
+  <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <!-- AOS Library -->
@@ -22,35 +49,31 @@
   <!-- Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <!-- Translations (RU / KK / EN) -->
   <script src="js/i18n.js"></script>
 </head>
 
-<body class="antialiased font-sans" id="top" data-i18n-title="meta.home_title" data-i18n-desc="meta.home_desc">
+<body class="antialiased font-sans text-slate-700 bg-slate-50" id="top" data-i18n-title="meta.home_title" data-i18n-desc="meta.home_desc">
 
   <!-- Top Promo Ribbon -->
-  <div class="text-white text-sm" style="background: linear-gradient(90deg, var(--brand-red), var(--brand-primary));">
+  <div class="text-white text-sm bg-gradient-to-r from-brand-800 via-brand-700 to-brand-600">
     <div class="max-w-screen-xl mx-auto px-4 sm:px-8 py-2.5 flex items-center justify-between gap-3">
       <p class="font-medium truncate min-w-0 flex-1" data-i18n="promo.text">💙 Экономьте 10 000 ₸ при оплате за 2 месяца вперёд — ограниченное предложение!</p>
-      <a href="Kazakhstan_IELTS_course_tuition.html" class="flex-shrink-0 bg-white text-gray-900 text-xs font-bold px-4 py-1.5 rounded-full hover:opacity-90 transition" data-i18n="promo.cta">Подробнее</a>
+      <a href="Kazakhstan_IELTS_course_tuition.html" class="flex-shrink-0 bg-white text-brand-800 text-xs font-bold px-4 py-1.5 rounded-full hover:bg-accent-100 transition" data-i18n="promo.cta">Подробнее</a>
     </div>
   </div>
 
   <!-- Navigation Header -->
-  <header x-data="{ open: false, coursesOpen: false, langOpen: false }" class="w-full text-gray-700 bg-white sticky top-0 z-50 shadow-sm">
+  <header x-data="{ open: false, coursesOpen: false, langOpen: false }" class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
     <div class="flex flex-col max-w-screen-xl px-4 sm:px-8 mx-auto md:items-center md:justify-between md:flex-row">
-      <div class="flex flex-row items-center justify-between py-5 w-full md:w-auto">
-        <div class="relative md:mt-2">
-          <a href="#top" class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">
-            Kazakhstan IELTS
-          </a>
-          <svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z" fill="#65DAFF" />
-          </svg>
-        </div>
-        <button aria-label="Toggle Navigation Menu" class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+      <div class="flex flex-row items-center justify-between py-4 w-full md:w-auto">
+        <a href="#top" class="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg">
+          <img src="img/Logo.png" alt="Kazakhstan IELTS" class="w-10 h-10 rounded-xl object-cover shadow-soft flex-shrink-0" />
+          <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900">Kazakhstan IELTS</span>
+        </a>
+        <button aria-label="Toggle Navigation Menu" class="rounded-lg md:hidden text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" @click="open = !open">
           <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
             <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
             <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -58,38 +81,38 @@
         </button>
       </div>
 
-      <nav :class="{ 'flex': open, 'hidden': !open }" class="hidden md:flex md:flex-row flex-col flex-grow md:items-center pb-4 md:pb-0 md:justify-end transition duration-300">
-        <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 md:ml-2 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#top" data-i18n="nav.home">Главная</a>
-        <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 md:ml-2 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#about" data-i18n="nav.about">О нас</a>
+      <nav :class="{ 'flex': open, 'hidden': !open }" class="hidden md:flex md:flex-row flex-col flex-grow md:items-center pb-4 md:pb-0 md:justify-end gap-0.5 md:gap-1 transition duration-300">
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="#top" data-i18n="nav.home">Главная</a>
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="#about" data-i18n="nav.about">О нас</a>
 
-        <div class="relative md:ml-2" @mouseenter="coursesOpen = true" @mouseleave="coursesOpen = false">
-          <button @click="coursesOpen = !coursesOpen" class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 w-full text-left flex items-center gap-1 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+        <div class="relative" @mouseenter="coursesOpen = true" @mouseleave="coursesOpen = false">
+          <button @click="coursesOpen = !coursesOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
             <span data-i18n="nav.courses">Курсы</span>
             <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
           </button>
-          <div x-show="coursesOpen" x-cloak :class="{ 'dropdown-open': coursesOpen }" class="dropdown-panel md:absolute md:top-full md:left-0 md:w-56 md:bg-white md:shadow-xl md:rounded-lg md:pt-3 md:pb-2">
-            <a href="#courses" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" data-i18n="nav.courses_general">Общий английский</a>
-            <a href="#courses" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" data-i18n="nav.courses_ielts">Подготовка к IELTS</a>
-            <a href="Kazakhstan_IELTS_course_tuition.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" data-i18n="nav.courses_pricing">Полные тарифы и калькулятор</a>
+          <div x-show="coursesOpen" x-cloak :class="{ 'dropdown-open': coursesOpen }" class="dropdown-panel md:absolute md:top-full md:left-0 md:w-64 md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2 md:mt-2">
+            <a href="#courses" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_general">Общий английский</a>
+            <a href="#courses" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_ielts">Подготовка к IELTS</a>
+            <a href="Kazakhstan_IELTS_course_tuition.html" class="block px-4 py-2.5 text-sm rounded-xl font-semibold text-brand-700 hover:bg-brand-50" data-i18n="nav.courses_pricing">Полные тарифы и калькулятор</a>
           </div>
         </div>
 
-        <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 md:ml-2 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="#reviews" data-i18n="nav.reviews">Отзывы</a>
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="#reviews" data-i18n="nav.reviews">Отзывы</a>
 
-        <div class="relative md:ml-2" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
-          <button @click="langOpen = !langOpen" class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 w-full text-left flex items-center gap-1 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+        <div class="relative md:ml-1" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
+          <button @click="langOpen = !langOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1.5 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
             <span>🌐</span>
             <span data-lang-label>RU</span>
             <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
           </button>
-          <div x-show="langOpen" x-cloak :class="{ 'dropdown-open': langOpen }" class="dropdown-panel md:absolute md:top-full md:right-0 md:w-40 md:bg-white md:shadow-xl md:rounded-lg md:pt-3 md:pb-2">
-            <button type="button" data-lang-option="ru" @click="i18n.apply('ru'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Русский</button>
-            <button type="button" data-lang-option="kk" @click="i18n.apply('kk'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Қазақша</button>
-            <button type="button" data-lang-option="en" @click="i18n.apply('en'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">English</button>
+          <div x-show="langOpen" x-cloak :class="{ 'dropdown-open': langOpen }" class="dropdown-panel md:absolute md:top-full md:right-0 md:w-40 md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2 md:mt-2">
+            <button type="button" data-lang-option="ru" @click="i18n.apply('ru'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Русский</button>
+            <button type="button" data-lang-option="kk" @click="i18n.apply('kk'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Қазақша</button>
+            <button type="button" data-lang-option="en" @click="i18n.apply('en'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">English</button>
           </div>
         </div>
 
-        <a class="px-6 py-3 mt-2 text-sm text-center text-white rounded-full md:mt-0 md:ml-4 shadow-sm transition flex items-center justify-center gap-2" style="background:#25d366" href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener">
+        <a class="mt-2 md:mt-0 md:ml-3 inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm text-center text-white rounded-full shadow-soft hover:opacity-90 transition bg-[#25d366]" href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
           <span data-i18n="nav.whatsapp">Написать в WhatsApp</span>
         </a>
@@ -98,54 +121,106 @@
   </header>
 
   <!-- Hero -->
-  <section class="bg-cream relative overflow-hidden py-8 sm:py-12">
-    <div class="max-w-screen-xl px-4 sm:px-8 mx-auto relative">
+  <section class="relative overflow-hidden bg-mesh">
+    <div class="max-w-screen-xl px-4 sm:px-8 mx-auto relative py-14 sm:py-20 lg:py-24">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-      <div class="rounded-3xl bg-white shadow-xl p-6 sm:p-10 lg:p-12 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-        <div class="flex-1 text-center lg:text-left">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-            <span class="block text-gray-900" data-i18n="hero.title1">Результативное</span>
-            <span class="block" style="color: var(--brand-red)" data-i18n="hero.title2">обучение английскому и подготовка к IELTS</span>
-            <span class="block" style="color: var(--brand-primary)" data-i18n="hero.title3">для каждого ученика</span>
+        <div class="flex-1 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+          <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] tracking-tight">
+            <span class="block text-slate-900" data-i18n="hero.title1">Результативное</span>
+            <span class="block bg-clip-text text-transparent bg-gradient-to-r from-brand-700 via-brand-600 to-accent-600" data-i18n="hero.title2">обучение английскому и подготовка к IELTS</span>
+            <span class="block text-slate-900" data-i18n="hero.title3">для каждого ученика</span>
           </h1>
-          <p class="text-gray-500 mt-5 text-base sm:text-lg max-w-md mx-auto lg:mx-0" data-i18n="hero.subtitle">
+          <p class="text-slate-500 mt-6 text-base sm:text-lg leading-relaxed" data-i18n="hero.subtitle">
             Хотите ли вы развить разговорные навыки на каждый день или готовитесь к экзамену IELTS — наши программы построены так, чтобы обеспечить стабильный прогресс: в мини-группах или индивидуально.
           </p>
-          <a href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener" class="inline-flex items-center gap-3 mt-8 pl-6 pr-2 py-2 rounded-full text-white font-semibold shadow-md hover:opacity-90 transition" style="background: var(--brand-red)">
-            <span data-i18n="hero.cta">Присоединиться</span>
-            <span class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center flex-shrink-0">
-              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-            </span>
-          </a>
+          <div class="mt-8 flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start">
+            <a href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 pl-6 pr-2.5 py-2.5 rounded-full text-white font-semibold shadow-soft hover:opacity-90 transition bg-[#25d366]">
+              <span data-i18n="hero.cta">Присоединиться</span>
+              <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </span>
+            </a>
+            <a href="Kazakhstan_IELTS_course_tuition.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-brand-700 bg-white border border-slate-200 shadow-sm hover:border-brand-300 hover:bg-brand-50 transition" data-i18n="features.card1_cta">Смотреть тарифы</a>
+          </div>
         </div>
-        <div class="flex-shrink-0 relative w-40 h-40 sm:w-64 sm:h-64 lg:w-72 lg:h-72 mx-auto">
-          <div class="hero-ring" style="inset: -1rem;"></div>
-          <div class="hero-ring"></div>
-          <div class="absolute inset-4 rounded-full overflow-hidden shadow-xl" style="background: var(--brand-red)">
+
+        <div class="flex-shrink-0 relative w-52 h-52 sm:w-72 sm:h-72 lg:w-80 lg:h-80 mx-auto">
+          <div class="absolute -inset-4 rounded-full border border-dashed border-brand-200"></div>
+          <div class="absolute -inset-8 rounded-full border border-dashed border-brand-100"></div>
+          <div class="absolute inset-4 rounded-full overflow-hidden shadow-soft ring-4 ring-white bg-gradient-to-br from-brand-600 to-brand-900">
             <img class="w-full h-full object-cover object-top" src="img/Leonardo_Phoenix_10_A_fullbody_hyperrealistic_futuristic_femal_3-removebg-preview (1).png" alt="Kazakhstan IELTS tutor illustration" />
           </div>
-          <div class="absolute -top-2 -left-2 sm:-left-10 hero-badge">
-            <div class="hero-badge-icon" style="background: var(--brand-red)">🎯</div>
-            <span class="hero-badge-label" data-i18n="hero.badge_ielts">Подготовка к IELTS</span>
+
+          <!-- Desktop orbit badges -->
+          <div class="hidden md:flex absolute -top-3 -left-12 float-a flex-col items-center gap-1.5">
+            <div class="w-11 h-11 rounded-full bg-brand-700 shadow-card flex items-center justify-center text-lg">🎯</div>
+            <span class="bg-white text-[11px] font-semibold text-slate-700 px-2.5 py-1 rounded-lg shadow-card whitespace-nowrap" data-i18n="hero.badge_ielts">Подготовка к IELTS</span>
           </div>
-          <div class="absolute -top-2 -right-2 sm:-right-10 hero-badge">
-            <div class="hero-badge-icon" style="background: var(--brand-primary)">🗣️</div>
-            <span class="hero-badge-label" data-i18n="hero.badge_general">Общий английский</span>
+          <div class="hidden md:flex absolute -top-3 -right-12 float-b flex-col items-center gap-1.5">
+            <div class="w-11 h-11 rounded-full bg-accent-500 shadow-card flex items-center justify-center text-lg">🗣️</div>
+            <span class="bg-white text-[11px] font-semibold text-slate-700 px-2.5 py-1 rounded-lg shadow-card whitespace-nowrap" data-i18n="hero.badge_general">Общий английский</span>
           </div>
-          <div class="absolute top-1/2 -right-4 sm:-right-16 hero-badge">
-            <div class="hero-badge-icon" style="background: #5b72ee">🎓</div>
-            <span class="hero-badge-label" data-i18n="hero.badge_teacher">Опытный преподаватель</span>
+          <div class="hidden md:flex absolute top-1/2 -right-16 float-c flex-col items-center gap-1.5">
+            <div class="w-11 h-11 rounded-full bg-indigo-500 shadow-card flex items-center justify-center text-lg">🎓</div>
+            <span class="bg-white text-[11px] font-semibold text-slate-700 px-2.5 py-1 rounded-lg shadow-card whitespace-nowrap" data-i18n="hero.badge_teacher">Носитель языка</span>
           </div>
-          <div class="absolute bottom-0 -left-2 sm:-left-14 bg-white rounded-xl shadow-lg px-3 py-2 flex items-center gap-2">
+          <div class="hidden md:flex absolute -bottom-4 -left-16 float-b items-center gap-2 bg-white rounded-xl shadow-card px-3 py-2">
             <span class="text-lg">✅</span>
             <div class="text-left leading-tight">
-              <p class="text-xs font-bold text-gray-800" data-i18n="hero.badge_free_title">Бесплатная практика</p>
-              <p class="text-xs text-gray-400" data-i18n="hero.badge_free_sub">Включено в стоимость</p>
+              <p class="text-xs font-bold text-slate-800" data-i18n="hero.badge_free_title">Бесплатная практика</p>
+              <p class="text-[11px] text-slate-400" data-i18n="hero.badge_free_sub">Включено в стоимость</p>
             </div>
           </div>
-          <div class="absolute -bottom-3 right-0 sm:-right-4 hero-badge">
-            <div class="hero-badge-icon" style="background: var(--brand-primary)">🗓️</div>
-            <span class="hero-badge-label" data-i18n="hero.badge_hours">Гибкий график</span>
+          <div class="hidden md:flex absolute -bottom-3 right-0 float-a flex-col items-center gap-1.5">
+            <div class="w-11 h-11 rounded-full bg-brand-500 shadow-card flex items-center justify-center text-lg">🗓️</div>
+            <span class="bg-white text-[11px] font-semibold text-slate-700 px-2.5 py-1 rounded-lg shadow-card whitespace-nowrap" data-i18n="hero.badge_hours">Гибкий график</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile chip row (same content, compact) -->
+      <div class="md:hidden mt-8 flex flex-wrap justify-center gap-2 max-w-md mx-auto">
+        <span class="inline-flex items-center gap-1.5 bg-white text-xs font-semibold text-slate-700 px-3 py-1.5 rounded-full shadow-card">🎯 <span data-i18n="hero.badge_ielts">Подготовка к IELTS</span></span>
+        <span class="inline-flex items-center gap-1.5 bg-white text-xs font-semibold text-slate-700 px-3 py-1.5 rounded-full shadow-card">🗣️ <span data-i18n="hero.badge_general">Общий английский</span></span>
+        <span class="inline-flex items-center gap-1.5 bg-white text-xs font-semibold text-slate-700 px-3 py-1.5 rounded-full shadow-card">🎓 <span data-i18n="hero.badge_teacher">Носитель языка</span></span>
+        <span class="inline-flex items-center gap-1.5 bg-white text-xs font-semibold text-slate-700 px-3 py-1.5 rounded-full shadow-card">🗓️ <span data-i18n="hero.badge_hours">Гибкий график</span></span>
+        <span class="inline-flex items-center gap-1.5 bg-white text-xs font-semibold text-slate-700 px-3 py-1.5 rounded-full shadow-card">✅ <span data-i18n="hero.badge_free_title">Бесплатная практика</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Facts bar: online / level / native speaker / location -->
+  <section class="bg-white border-y border-slate-100">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-8 py-8">
+      <p class="text-center text-xs font-bold uppercase tracking-wider text-brand-600 mb-5" data-i18n="key_facts.eyebrow">Важно знать перед началом</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div data-aos="fade-up" class="flex items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl flex-shrink-0">💻</div>
+          <div>
+            <p class="font-bold text-slate-900 text-sm" data-i18n="key_facts.online_title">100% Онлайн</p>
+            <p class="text-xs text-slate-500 mt-0.5 leading-snug" data-i18n="key_facts.online_desc">Все занятия проходят онлайн — учитесь из любой точки Казахстана.</p>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="flex items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl flex-shrink-0">📈</div>
+          <div>
+            <p class="font-bold text-slate-900 text-sm" data-i18n="key_facts.level_title">От уровня A2</p>
+            <p class="text-xs text-slate-500 mt-0.5 leading-snug" data-i18n="key_facts.level_desc">Курс подходит студентам с уровнем английского A2 и выше.</p>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200" class="flex items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl flex-shrink-0">🎓</div>
+          <div>
+            <p class="font-bold text-slate-900 text-sm" data-i18n="key_facts.native_title">Носитель языка</p>
+            <p class="text-xs text-slate-500 mt-0.5 leading-snug" data-i18n="key_facts.native_desc">Все занятия ведёт преподаватель — носитель английского языка.</p>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300" class="flex items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl flex-shrink-0">📍</div>
+          <div>
+            <p class="font-bold text-slate-900 text-sm" data-i18n="key_facts.location_title">Школа в Алматы</p>
+            <p class="text-xs text-slate-500 mt-0.5 leading-snug" data-i18n="key_facts.location_desc">Локальная онлайн-школа из Алматы с преподавателем из Новой Зеландии.</p>
           </div>
         </div>
       </div>
@@ -153,186 +228,139 @@
   </section>
 
   <!-- Free Practice CTA strip -->
-  <div class="bg-white border-b border-gray-100">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-      <p class="text-gray-600 text-sm sm:text-base" data-i18n="strip.text">Не знаете свой уровень? Каждый тарифный план включает бесплатные пробные экзамены по чтению и аудированию.</p>
-      <a href="https://wa.me/77081726414?text=Hi%2C+I+would+like+a+free+IELTS+practice+exam." target="_blank" rel="noopener" class="px-5 py-2 text-sm font-medium text-white rounded-full shadow-sm hover:opacity-90 transition whitespace-nowrap" style="background: var(--brand-primary)" data-i18n="strip.cta">Узнать о бесплатных материалах</a>
+  <div class="bg-white border-y border-slate-100">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+      <span class="hidden sm:flex w-9 h-9 rounded-full bg-accent-100 text-accent-600 items-center justify-center flex-shrink-0">📘</span>
+      <p class="text-slate-600 text-sm sm:text-base" data-i18n="strip.text">Не знаете свой уровень? Каждый тарифный план включает бесплатные пробные экзамены по чтению и аудированию.</p>
+      <a href="https://wa.me/77081726414?text=Hi%2C+I+would+like+a+free+IELTS+practice+exam." target="_blank" rel="noopener" class="px-5 py-2 text-sm font-semibold text-white rounded-full shadow-sm hover:opacity-90 transition whitespace-nowrap bg-accent-500" data-i18n="strip.cta">Узнать о бесплатных материалах</a>
     </div>
   </div>
 
   <!-- Main Container -->
-  <main class="container px-4 lg:px-8 mx-auto max-w-screen-xl text-gray-700 overflow-x-hidden">
+  <main class="container px-4 lg:px-8 mx-auto max-w-screen-xl overflow-x-hidden">
 
-    <!-- Why Choose Kazakhstan IELTS - Badge Row -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 text-center">
-      <div data-aos="fade-up" class="bg-white shadow-md rounded-2xl p-5">
-        <p class="text-2xl">👥</p>
-        <p class="font-semibold text-gray-800 text-sm mt-2" data-i18n="badges.groups_title">Мини-группы</p>
-        <p class="text-xs text-gray-500 mt-1" data-i18n="badges.groups_sub">Максимум 3–4 ученика</p>
+    <!-- Trust badge row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-16 text-center">
+      <div data-aos="fade-up" class="bg-white shadow-card rounded-2xl p-5 border border-slate-100 hover:-translate-y-1 hover:shadow-soft transition-all">
+        <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto text-xl">👥</div>
+        <p class="font-semibold text-slate-800 text-sm mt-3" data-i18n="badges.groups_title">Мини-группы</p>
+        <p class="text-xs text-slate-500 mt-1" data-i18n="badges.groups_sub">Максимум 3–4 ученика</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="100" class="bg-white shadow-md rounded-2xl p-5">
-        <p class="text-2xl">🗓️</p>
-        <p class="font-semibold text-gray-800 text-sm mt-2" data-i18n="badges.schedule_title">Гибкое расписание</p>
-        <p class="text-xs text-gray-500 mt-1" data-i18n="badges.schedule_sub">Занятия под ваш ритм недели</p>
+      <div data-aos="fade-up" data-aos-delay="100" class="bg-white shadow-card rounded-2xl p-5 border border-slate-100 hover:-translate-y-1 hover:shadow-soft transition-all">
+        <div class="w-11 h-11 rounded-xl bg-accent-50 text-accent-600 flex items-center justify-center mx-auto text-xl">🗓️</div>
+        <p class="font-semibold text-slate-800 text-sm mt-3" data-i18n="badges.schedule_title">Гибкое расписание</p>
+        <p class="text-xs text-slate-500 mt-1" data-i18n="badges.schedule_sub">Занятия под ваш ритм недели</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="200" class="bg-white shadow-md rounded-2xl p-5">
-        <p class="text-2xl">🙋</p>
-        <p class="font-semibold text-gray-800 text-sm mt-2" data-i18n="badges.oneonone_title">Индивидуальный подход</p>
-        <p class="text-xs text-gray-500 mt-1" data-i18n="badges.oneonone_sub">Занятия ведёт лично ваш преподаватель</p>
+      <div data-aos="fade-up" data-aos-delay="200" class="bg-white shadow-card rounded-2xl p-5 border border-slate-100 hover:-translate-y-1 hover:shadow-soft transition-all">
+        <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto text-xl">🙋</div>
+        <p class="font-semibold text-slate-800 text-sm mt-3" data-i18n="badges.oneonone_title">Индивидуальный подход</p>
+        <p class="text-xs text-slate-500 mt-1" data-i18n="badges.oneonone_sub">Занятия ведёт лично ваш преподаватель</p>
       </div>
-      <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-md rounded-2xl p-5">
-        <p class="text-2xl">🎯</p>
-        <p class="font-semibold text-gray-800 text-sm mt-2" data-i18n="badges.ielts_title">Фокус на IELTS</p>
-        <p class="text-xs text-gray-500 mt-1" data-i18n="badges.ielts_sub">Практика в формате реального экзамена</p>
-      </div>
-    </div>
-
-    <!-- Section Title -->
-    <div data-aos="flip-up" class="max-w-xl mx-auto text-center mt-20">
-      <h2 class="font-bold text-darken my-3 text-3xl">
-        <span data-i18n="platform.title1">Универсальная</span> <span class="text-yellow-500" data-i18n="platform.title2">платформа для изучения английского</span>
-      </h2>
-      <p class="leading-relaxed text-gray-500" data-i18n="platform.desc">
-        Kazakhstan IELTS предлагает структурированные уроки, прямую обратную связь от преподавателя и прозрачные тарифные планы.
-      </p>
-    </div>
-
-    <!-- Features Cards Grid -->
-    <div class="grid md:grid-cols-3 gap-10 mt-20">
-      <div data-aos="fade-up" class="bg-white shadow-xl p-8 text-center rounded-xl flex flex-col justify-between">
-        <div>
-          <div style="background: #5b72ee" class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
-            <svg class="w-6 h-6 text-white" viewBox="0 0 33 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24.75 23H8.25V28.75H24.75V23ZM32.3984 9.43359L23.9852 0.628906C23.5984 0.224609 23.0742 0 22.5242 0H22V11.5H33V10.952C33 10.3859 32.7852 9.83789 32.3984 9.43359ZM19.25 12.2188V0H2.0625C0.919531 0 0 0.961328 0 2.15625V43.8438C0 45.0387 0.919531 46 2.0625 46H30.9375C32.0805 46 33 45.0387 33 43.8438V14.375H21.3125C20.1781 14.375 19.25 13.4047 19.25 12.2188ZM5.5 6.46875C5.5 6.07164 5.80766 5.75 6.1875 5.75H13.0625C13.4423 5.75 13.75 6.07164 13.75 6.46875V7.90625C13.75 8.30336 13.4423 8.625 13.0625 8.625H6.1875C5.80766 8.625 5.5 8.30336 5.5 7.90625V6.46875ZM5.5 12.2188C5.5 11.8216 5.80766 11.5 6.1875 11.5H13.0625C13.4423 11.5 13.75 11.8216 13.75 12.2188V13.6562C13.75 14.0534 13.4423 14.375 13.0625 14.375H6.1875C5.80766 14.375 5.5 14.0534 5.5 13.6562V12.2188ZM27.5 39.5312C27.5 39.9284 27.1923 40.25 26.8125 40.25H19.9375C19.5577 40.25 19.25 39.9284 19.25 39.5312V38.0938C19.25 37.6966 19.5577 37.375 19.9375 37.375H26.8125C27.1923 37.375 27.5 37.6966 27.5 38.0938V39.5312ZM27.5 21.5625V30.1875C27.5 30.9817 26.8847 31.625 26.125 31.625H6.875C6.11531 31.625 5.5 30.9817 5.5 30.1875V21.5625C5.5 20.7683 6.11531 20.125 6.875 20.125H26.125C26.8847 20.125 27.5 20.7683 27.5 21.5625Z" fill="white" />
-            </svg>
-          </div>
-          <h3 class="font-semibold text-xl mb-3 text-gray-800" data-i18n="features.card1_title">Тарифы и курсы</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-i18n="features.card1_desc">
-            Структурированные варианты общего английского и подготовки к IELTS, разбивка цен, расписание занятий и интерактивный калькулятор скидок.
-          </p>
-        </div>
-        <div class="mt-8">
-          <a class="px-8 py-3 text-sm font-medium text-center bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition inline-block shadow-md" href="Kazakhstan_IELTS_course_tuition.html" data-i18n="features.card1_cta">Смотреть тарифы</a>
-        </div>
-      </div>
-
-      <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-xl p-8 text-center rounded-xl flex flex-col justify-between">
-        <div>
-          <div style="background: #f48c06" class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
-            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F5F5FC"/>
-            </svg>
-          </div>
-          <h3 class="font-semibold text-xl mb-3 text-gray-800" data-i18n="features.card2_title">Отзывы студентов</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-i18n="features.card2_desc">
-            Смотрите отзывы нынешних и бывших учеников и делитесь своим впечатлением после занятия.
-          </p>
-        </div>
-        <div class="mt-8">
-          <a class="px-8 py-3 text-sm font-medium text-center bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition inline-block shadow-md" href="#reviews" data-i18n="features.card2_cta">Читать отзывы</a>
-        </div>
-      </div>
-
-      <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-xl p-8 text-center rounded-xl flex flex-col justify-between">
-        <div>
-          <div style="background: #29b9e7" class="rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg transform -translate-y-12">
-            <svg class="w-6 h-6 text-white" viewBox="0 0 55 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.25 19.25C11.2836 19.25 13.75 16.7836 13.75 13.75C13.75 10.7164 11.2836 8.25 8.25 8.25C5.21641 8.25 2.75 10.7164 2.75 13.75C2.75 16.7836 5.21641 19.25 8.25 19.25Z" fill="white" />
-            </svg>
-          </div>
-          <h3 class="font-semibold text-xl mb-3 text-gray-800" data-i18n="features.card3_title">Бесплатные пробные экзамены</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-i18n="features.card3_desc">
-            Доступ к бесплатным пробным экзаменам по чтению и аудированию, PDF-материалам для скачивания и заданиям для домашней практики — всё включено в стоимость.
-          </p>
-        </div>
-        <div class="mt-8">
-          <a class="px-8 py-3 text-sm font-medium text-center bg-yellow-500 text-white rounded-full hover:bg-yellow-600 transition inline-block shadow-md" href="Kazakhstan_IELTS_course_tuition.html" data-i18n="features.card3_cta">Узнать больше</a>
-        </div>
+      <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-card rounded-2xl p-5 border border-slate-100 hover:-translate-y-1 hover:shadow-soft transition-all">
+        <div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center mx-auto text-xl">🎯</div>
+        <p class="font-semibold text-slate-800 text-sm mt-3" data-i18n="badges.ielts_title">Фокус на IELTS</p>
+        <p class="text-xs text-slate-500 mt-1" data-i18n="badges.ielts_sub">Практика в формате реального экзамена</p>
       </div>
     </div>
 
     <!-- Courses / Pricing Section -->
     <section id="courses" class="mt-28 scroll-mt-24">
-      <div data-aos="flip-down" class="text-center max-w-screen-md mx-auto">
-        <h2 class="text-3xl font-bold mb-4 text-gray-800">
-          <span data-i18n="courses.title1">Наши</span> <span class="text-yellow-500" data-i18n="courses.title2">курсы</span>
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold mb-4 text-slate-900">
+          <span data-i18n="courses.title1">Наши</span> <span class="text-accent-600" data-i18n="courses.title2">курсы</span>
         </h2>
-        <p class="text-gray-500 leading-relaxed" data-i18n="courses.desc">
+        <p class="text-slate-500 leading-relaxed" data-i18n="courses.desc">
           Две программы, каждая доступна как в формате мини-группы, так и индивидуально. Полная разбивка цен и интерактивный калькулятор — на странице тарифов.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 mt-12">
+      <div class="grid md:grid-cols-2 gap-6 sm:gap-8 mt-12">
         <!-- General English -->
-        <div data-aos="fade-up" class="bg-white shadow-xl rounded-2xl p-8">
-          <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full" style="background:#eef4ff; color:var(--brand-primary)" data-i18n="ge.tag">Основа и беглость речи</span>
-          <h3 class="text-2xl font-bold text-gray-800 mt-3" data-i18n="ge.title">Общий английский</h3>
-          <p class="text-gray-500 text-sm mt-2 leading-relaxed" data-i18n="ge.desc">Развивайте уверенность в речи, расширяйте словарный запас и совершенствуйте грамматику для реальных жизненных ситуаций.</p>
-          <div class="mt-6 space-y-3">
-            <div class="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3">
-              <span class="text-sm font-semibold text-gray-700" data-i18n="ge.group_label">👥 Групповое занятие (макс. 3–4)</span>
-              <span class="font-bold" style="color: var(--brand-cta)">3,000 KZT<span class="text-xs text-gray-400 font-normal">/class</span></span>
+        <div data-aos="fade-up" class="bg-white shadow-card border border-slate-100 rounded-2xl overflow-hidden">
+          <div class="h-1.5 bg-gradient-to-r from-brand-500 to-brand-700"></div>
+          <div class="p-7 sm:p-8">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-brand-50 text-brand-700" data-i18n="ge.tag">Основа и беглость речи</span>
+                <h3 class="text-2xl font-bold text-slate-800 mt-3" data-i18n="ge.title">Общий английский</h3>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-brand-50 text-2xl flex items-center justify-center flex-shrink-0">🗣️</div>
             </div>
-            <div class="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3">
-              <span class="text-sm font-semibold text-gray-700" data-i18n="ge.ind_label">👤 Индивидуальное занятие</span>
-              <span class="font-bold" style="color: var(--brand-cta)">5,000 KZT<span class="text-xs text-gray-400 font-normal">/class</span></span>
+            <p class="text-slate-500 text-sm mt-3 leading-relaxed" data-i18n="ge.desc">Развивайте уверенность в речи, расширяйте словарный запас и совершенствуйте грамматику для реальных жизненных ситуаций.</p>
+            <div class="mt-6 space-y-3">
+              <div class="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3.5 border border-slate-100">
+                <span class="text-sm font-semibold text-slate-700" data-i18n="ge.group_label">👥 Групповое занятие (макс. 3–4)</span>
+                <span class="font-bold text-brand-700 whitespace-nowrap">3,000 <span class="text-xs text-slate-400 font-medium" data-i18n="tuition.ge.group_price_unit">KZT / занятие</span></span>
+              </div>
+              <div class="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3.5 border border-slate-100">
+                <span class="text-sm font-semibold text-slate-700" data-i18n="ge.ind_label">👤 Индивидуальное занятие</span>
+                <span class="font-bold text-brand-700 whitespace-nowrap">5,000 <span class="text-xs text-slate-400 font-medium" data-i18n="tuition.ge.ind_price_unit">KZT / занятие</span></span>
+              </div>
             </div>
+            <a href="https://wa.me/77081726414?text=Hi%2C+I+am+interested+in+the+General+English+course." target="_blank" rel="noopener" class="mt-6 block text-center px-6 py-3 text-sm font-semibold text-white rounded-full hover:opacity-90 transition bg-brand-600" data-i18n="ge.cta">Написать в WhatsApp</a>
           </div>
-          <a href="https://wa.me/77081726414?text=Hi%2C+I+am+interested+in+the+General+English+course." target="_blank" rel="noopener" class="mt-6 block text-center px-6 py-3 text-sm font-medium text-white rounded-full hover:opacity-90 transition" style="background: var(--brand-primary)" data-i18n="ge.cta">Написать в WhatsApp</a>
         </div>
 
         <!-- IELTS Prep -->
-        <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-xl rounded-2xl p-8">
-          <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full" style="background:#fff2e8; color:var(--brand-cta-dark)" data-i18n="ielts.tag">Экзаменационное мастерство</span>
-          <h3 class="text-2xl font-bold text-gray-800 mt-3" data-i18n="ielts.title">Программа подготовки к IELTS</h3>
-          <p class="text-gray-500 text-sm mt-2 leading-relaxed" data-i18n="ielts.desc">Целевые стратегии, интенсивная отработка навыков и настоящие экзаменационные материалы для достижения нужного балла.</p>
-          <div class="mt-6 space-y-3">
-            <div class="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3">
-              <span class="text-sm font-semibold text-gray-700" data-i18n="ielts.group_label">👥 Групповое занятие (макс. 3–4)</span>
-              <span class="font-bold" style="color: var(--brand-cta)">4,000 KZT<span class="text-xs text-gray-400 font-normal">/hr</span></span>
+        <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-card border border-slate-100 rounded-2xl overflow-hidden">
+          <div class="h-1.5 bg-gradient-to-r from-indigo-500 to-accent-600"></div>
+          <div class="p-7 sm:p-8">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-indigo-50 text-indigo-700" data-i18n="ielts.tag">Экзаменационное мастерство</span>
+                <h3 class="text-2xl font-bold text-slate-800 mt-3" data-i18n="ielts.title">Программа подготовки к IELTS</h3>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-2xl flex items-center justify-center flex-shrink-0">🎯</div>
             </div>
-            <div class="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3">
-              <span class="text-sm font-semibold text-gray-700" data-i18n="ielts.ind_label">👤 Индивидуальное занятие</span>
-              <span class="font-bold" style="color: var(--brand-cta)">6,000 KZT<span class="text-xs text-gray-400 font-normal">/class</span></span>
+            <p class="text-slate-500 text-sm mt-3 leading-relaxed" data-i18n="ielts.desc">Целевые стратегии, интенсивная отработка навыков и настоящие экзаменационные материалы для достижения нужного балла.</p>
+            <div class="mt-6 space-y-3">
+              <div class="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3.5 border border-slate-100">
+                <span class="text-sm font-semibold text-slate-700" data-i18n="ielts.group_label">👥 Групповое занятие (макс. 3–4)</span>
+                <span class="font-bold text-indigo-700 whitespace-nowrap">4,000 <span class="text-xs text-slate-400 font-medium" data-i18n="tuition.ielts.group_price_unit">KZT / час</span></span>
+              </div>
+              <div class="flex items-center justify-between bg-slate-50 rounded-xl px-4 py-3.5 border border-slate-100">
+                <span class="text-sm font-semibold text-slate-700" data-i18n="ielts.ind_label">👤 Индивидуальное занятие</span>
+                <span class="font-bold text-indigo-700 whitespace-nowrap">6,000 <span class="text-xs text-slate-400 font-medium" data-i18n="tuition.ielts.ind_price_unit">KZT / занятие</span></span>
+              </div>
             </div>
+            <a href="https://wa.me/77081726414?text=Hi%2C+I+am+interested+in+the+IELTS+Prep+course." target="_blank" rel="noopener" class="mt-6 block text-center px-6 py-3 text-sm font-semibold text-white rounded-full hover:opacity-90 transition bg-brand-600" data-i18n="ielts.cta">Написать в WhatsApp</a>
           </div>
-          <a href="https://wa.me/77081726414?text=Hi%2C+I+am+interested+in+the+IELTS+Prep+course." target="_blank" rel="noopener" class="mt-6 block text-center px-6 py-3 text-sm font-medium text-white rounded-full hover:opacity-90 transition" style="background: var(--brand-primary)" data-i18n="ielts.cta">Написать в WhatsApp</a>
         </div>
       </div>
 
       <div class="text-center mt-8">
-        <a href="Kazakhstan_IELTS_course_tuition.html" class="text-sm font-semibold hover:underline" style="color: var(--brand-primary)" data-i18n="courses.view_full">Смотреть полные тарифы и интерактивный калькулятор →</a>
+        <a href="Kazakhstan_IELTS_course_tuition.html" class="text-sm font-semibold text-brand-700 hover:text-brand-800 hover:underline" data-i18n="courses.view_full">Смотреть полные тарифы и интерактивный калькулятор →</a>
       </div>
     </section>
 
     <!-- About Platform Section -->
     <section id="about" class="mt-28 scroll-mt-24">
-      <div data-aos="flip-down" class="text-center max-w-screen-md mx-auto">
-        <h2 class="text-3xl font-bold mb-4 text-gray-800">
-          <span data-i18n="about.title1">Что такое</span> <span class="text-yellow-500" data-i18n="about.title2">Kazakhstan IELTS?</span>
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold mb-4 text-slate-900">
+          <span data-i18n="about.title1">Что такое</span> <span class="text-accent-600" data-i18n="about.title2">Kazakhstan IELTS?</span>
         </h2>
-        <p class="text-gray-500 leading-relaxed" data-i18n="about.desc">
+        <p class="text-slate-500 leading-relaxed" data-i18n="about.desc">
           Kazakhstan IELTS — это локальная программа обучения английскому языку и подготовки к IELTS, которая сочетает структурированные уроки с личной обратной связью, помогая ученикам достичь свободного владения языком и готовности к экзамену.
         </p>
       </div>
 
-      <div data-aos="fade-up" class="flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 md:space-x-6 lg:space-x-10 mt-10">
-        <div class="relative md:w-5/12">
-          <img class="rounded-2xl w-full object-cover" src="img/Rectangle 19.png" alt="Check Tuition & Program Rates" />
-          <div class="absolute bg-black bg-opacity-30 bottom-0 left-0 right-0 w-full h-full rounded-2xl flex items-center justify-center p-4">
-            <div class="text-center w-11/12">
-              <h3 class="uppercase text-white font-bold text-sm lg:text-xl mb-4" data-i18n="about.card1_title">Смотреть тарифы и цены курсов</h3>
-              <a href="Kazakhstan_IELTS_course_tuition.html" class="inline-block rounded-full text-white border border-white text-xs lg:text-sm px-6 py-3 w-full font-medium hover:bg-white hover:text-gray-900 transition duration-300 ease-in-out" data-i18n="about.card1_cta">Изучить курсы и скидки</a>
+      <div data-aos="fade-up" class="flex flex-col md:flex-row justify-center gap-5 md:gap-6 lg:gap-8 mt-10">
+        <div class="relative md:w-5/12 group overflow-hidden rounded-2xl shadow-card">
+          <img class="w-full h-64 sm:h-72 object-cover transition-transform duration-500 group-hover:scale-105" src="img/Rectangle 19.png" alt="Check Tuition & Program Rates" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-end justify-center p-6">
+            <div class="text-center w-full">
+              <h3 class="uppercase text-white font-bold text-sm lg:text-lg mb-4 tracking-wide" data-i18n="about.card1_title">Смотреть тарифы и цены курсов</h3>
+              <a href="Kazakhstan_IELTS_course_tuition.html" class="inline-block rounded-full text-slate-900 bg-white text-xs lg:text-sm px-6 py-2.5 font-semibold hover:bg-accent-100 transition" data-i18n="about.card1_cta">Изучить курсы и скидки</a>
             </div>
           </div>
         </div>
 
-        <div class="relative md:w-5/12">
-          <img class="rounded-2xl w-full object-cover" src="img/Rectangle 21.png" alt="Read student reviews" />
-          <div class="absolute bg-black bg-opacity-30 bottom-0 left-0 right-0 w-full h-full rounded-2xl flex items-center justify-center p-4">
-            <div class="text-center w-11/12">
-              <h3 class="uppercase text-white font-bold text-sm lg:text-xl mb-4" data-i18n="about.card2_title">Читать отзывы студентов</h3>
-              <a href="#reviews" class="inline-block rounded-full text-white text-xs lg:text-sm px-6 py-3 w-full font-medium hover:opacity-90 transition duration-300 ease-in-out" style="background: rgba(35, 189, 238, 0.95)" data-i18n="about.card2_cta">Смотреть, что говорят студенты</a>
+        <div class="relative md:w-5/12 group overflow-hidden rounded-2xl shadow-card">
+          <img class="w-full h-64 sm:h-72 object-cover transition-transform duration-500 group-hover:scale-105" src="img/Rectangle 21.png" alt="Read student reviews" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-end justify-center p-6">
+            <div class="text-center w-full">
+              <h3 class="uppercase text-white font-bold text-sm lg:text-lg mb-4 tracking-wide" data-i18n="about.card2_title">Читать отзывы студентов</h3>
+              <a href="#reviews" class="inline-block rounded-full text-white bg-brand-600 text-xs lg:text-sm px-6 py-2.5 font-semibold hover:bg-brand-700 transition" data-i18n="about.card2_cta">Смотреть, что говорят студенты</a>
             </div>
           </div>
         </div>
@@ -341,131 +369,131 @@
 
     <!-- Why Choose Kazakhstan IELTS - 3 columns -->
     <section class="mt-28">
-      <div data-aos="flip-up" class="text-center max-w-screen-md mx-auto">
-        <h2 class="text-3xl font-bold mb-4 text-gray-800"><span data-i18n="why.title1">Почему выбирают</span> <span class="text-yellow-500" data-i18n="why.title2">Kazakhstan IELTS?</span></h2>
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold mb-4 text-slate-900"><span data-i18n="why.title1">Почему выбирают</span> <span class="text-accent-600" data-i18n="why.title2">Kazakhstan IELTS?</span></h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8 mt-12">
-        <div data-aos="fade-up" class="bg-white shadow-md rounded-2xl p-8">
-          <h3 class="font-semibold text-lg text-gray-800 mb-3" data-i18n="why.col1_title">💬 Удобно через WhatsApp</h3>
-          <ul class="text-sm text-gray-500 space-y-2 leading-relaxed">
-            <li data-i18n="why.col1_li1">Пишите нам напрямую с любыми вопросами</li>
-            <li data-i18n="why.col1_li2">Бронируйте и переносите занятия быстро</li>
-            <li data-i18n="why.col1_li3">Без долгих анкет и регистраций</li>
+      <div class="grid md:grid-cols-3 gap-6 sm:gap-8 mt-12">
+        <div data-aos="fade-up" class="bg-white shadow-card border border-slate-100 rounded-2xl p-8">
+          <h3 class="font-bold text-lg text-slate-800 mb-4" data-i18n="why.col1_title">💬 Удобно через WhatsApp</h3>
+          <ul class="text-sm text-slate-500 space-y-3 leading-relaxed">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span data-i18n="why.col1_li1">Пишите нам напрямую с любыми вопросами</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span data-i18n="why.col1_li2">Бронируйте и переносите занятия быстро</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span data-i18n="why.col1_li3">Без долгих анкет и регистраций</span></li>
           </ul>
         </div>
-        <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-md rounded-2xl p-8">
-          <h3 class="font-semibold text-lg text-gray-800 mb-3" data-i18n="why.col2_title">🗓️ Гибкий график</h3>
-          <ul class="text-sm text-gray-500 space-y-2 leading-relaxed">
-            <li data-i18n="why.col2_li1">Выбирайте от 2 до 5 занятий в неделю</li>
-            <li data-i18n="why.col2_li2">Групповой или индивидуальный формат</li>
-            <li data-i18n="why.col2_li3">Расписание строится под ваш ритм жизни</li>
+        <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-card border border-slate-100 rounded-2xl p-8">
+          <h3 class="font-bold text-lg text-slate-800 mb-4" data-i18n="why.col2_title">🗓️ Гибкий график</h3>
+          <ul class="text-sm text-slate-500 space-y-3 leading-relaxed">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span data-i18n="why.col2_li1">Выбирайте от 2 до 5 занятий в неделю</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span data-i18n="why.col2_li2">Групповой или индивидуальный формат</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span data-i18n="why.col2_li3">Расписание строится под ваш ритм жизни</span></li>
           </ul>
         </div>
-        <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-md rounded-2xl p-8">
-          <h3 class="font-semibold text-lg text-gray-800 mb-3" data-i18n="why.col3_title">🎁 Больше, чем просто уроки</h3>
-          <ul class="text-sm text-gray-500 space-y-2 leading-relaxed">
-            <li data-i18n="why.col3_li1">Бесплатные пробные экзамены включены</li>
-            <li data-i18n="why.col3_li2">Личное внимание преподавателя на каждом занятии</li>
-            <li data-i18n="why.col3_li3">Скидки при оплате вперёд</li>
+        <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-card border border-slate-100 rounded-2xl p-8">
+          <h3 class="font-bold text-lg text-slate-800 mb-4" data-i18n="why.col3_title">🎁 Больше, чем просто уроки</h3>
+          <ul class="text-sm text-slate-500 space-y-3 leading-relaxed">
+            <li class="flex items-start gap-2.5"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span data-i18n="why.col3_li1">Бесплатные пробные экзамены включены</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span data-i18n="why.col3_li2">Личное внимание преподавателя на каждом занятии</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-emerald-500 font-bold mt-0.5">✓</span><span data-i18n="why.col3_li3">Скидки при оплате вперёд</span></li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- Core Values -->
-    <section class="mt-28">
-      <div data-aos="flip-up" class="text-center max-w-screen-md mx-auto">
-        <h2 class="text-3xl font-bold mb-4 text-gray-800"><span data-i18n="values.title1">Наши основные</span> <span class="text-yellow-500" data-i18n="values.title2">ценности</span></h2>
+    <section class="mt-28 mb-28">
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold mb-4 text-slate-900"><span data-i18n="values.title1">Наши основные</span> <span class="text-accent-600" data-i18n="values.title2">ценности</span></h2>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        <div data-aos="fade-up" class="text-center p-4">
-          <p class="text-3xl mb-2">🗣️</p>
-          <h4 class="font-semibold text-gray-800 text-sm mb-1" data-i18n="values.card1_title">Практическое общение</h4>
-          <p class="text-xs text-gray-500 leading-relaxed" data-i18n="values.card1_desc">Мы рассматриваем английский как инструмент реального общения, а не просто набор грамматических правил.</p>
+      <div data-aos="fade-up" class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900 via-brand-800 to-indigo-950 bg-mesh-dark mt-12 p-8 sm:p-12 shadow-soft">
+        <div class="grid sm:grid-cols-3 gap-8">
+          <div class="text-center">
+            <p class="text-3xl mb-3">🗣️</p>
+            <h4 class="font-bold text-white text-base mb-2" data-i18n="values.card1_title">Практическое общение</h4>
+            <p class="text-sm text-brand-100/80 leading-relaxed" data-i18n="values.card1_desc">Мы рассматриваем английский как инструмент реального общения, а не просто набор грамматических правил.</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl mb-3">🎯</p>
+            <h4 class="font-bold text-white text-base mb-2" data-i18n="values.card2_title">Ученик — на первом месте</h4>
+            <p class="text-sm text-brand-100/80 leading-relaxed" data-i18n="values.card2_desc">Маленькие группы дают каждому студенту реальное время для разговорной практики.</p>
+          </div>
+          <div class="text-center">
+            <p class="text-3xl mb-3">📈</p>
+            <h4 class="font-bold text-white text-base mb-2" data-i18n="values.card3_title">Постоянная практика</h4>
+            <p class="text-sm text-brand-100/80 leading-relaxed" data-i18n="values.card3_desc">Структурированное еженедельное расписание обеспечивает стабильный прогресс.</p>
+          </div>
         </div>
-        <div data-aos="fade-up" data-aos-delay="100" class="text-center p-4">
-          <p class="text-3xl mb-2">🎯</p>
-          <h4 class="font-semibold text-gray-800 text-sm mb-1" data-i18n="values.card2_title">Ученик — на первом месте</h4>
-          <p class="text-xs text-gray-500 leading-relaxed" data-i18n="values.card2_desc">Маленькие группы дают каждому студенту реальное время для разговорной практики.</p>
+        <div class="text-center mt-10">
+          <a href="https://wa.me/77081726414?text=Hi%2C+I+have+a+question+about+Kazakhstan+IELTS." target="_blank" rel="noopener" class="inline-block px-8 py-3 text-sm font-semibold text-white rounded-full shadow-soft hover:opacity-90 transition bg-[#25d366]" data-i18n="values.cta">Написать нам в WhatsApp</a>
         </div>
-        <div data-aos="fade-up" data-aos-delay="200" class="text-center p-4">
-          <p class="text-3xl mb-2">📈</p>
-          <h4 class="font-semibold text-gray-800 text-sm mb-1" data-i18n="values.card3_title">Постоянная практика</h4>
-          <p class="text-xs text-gray-500 leading-relaxed" data-i18n="values.card3_desc">Структурированное еженедельное расписание обеспечивает стабильный прогресс.</p>
-        </div>
-      </div>
-      <div class="text-center mt-10">
-        <a href="https://wa.me/77081726414?text=Hi%2C+I+have+a+question+about+Kazakhstan+IELTS." target="_blank" rel="noopener" class="inline-block px-8 py-3 text-sm font-semibold text-white rounded-full shadow-md hover:opacity-90 transition" style="background:#25d366" data-i18n="values.cta">Написать нам в WhatsApp</a>
       </div>
     </section>
 
     <!-- Reviews Section -->
-    <section id="reviews" class="mt-28 mb-24 scroll-mt-24">
-      <div data-aos="flip-up" class="text-center max-w-screen-md mx-auto">
-        <h2 class="text-3xl font-bold mb-3 text-gray-800"><span data-i18n="reviews.title1">Отзывы</span> <span class="text-yellow-500" data-i18n="reviews.title2">студентов</span></h2>
-        <div class="flex items-center justify-center gap-1.5 mb-3">
-          <svg class="w-5 h-5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-          <svg class="w-5 h-5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-          <svg class="w-5 h-5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-          <svg class="w-5 h-5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-          <svg class="w-5 h-5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+    <section id="reviews" class="mt-4 mb-24 scroll-mt-24">
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold mb-3 text-slate-900"><span data-i18n="reviews.title1">Отзывы</span> <span class="text-accent-600" data-i18n="reviews.title2">студентов</span></h2>
+        <div class="flex items-center justify-center gap-1 mb-3">
+          <svg class="w-5 h-5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+          <svg class="w-5 h-5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+          <svg class="w-5 h-5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+          <svg class="w-5 h-5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+          <svg class="w-5 h-5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
         </div>
-        <p class="text-gray-500 leading-relaxed" data-i18n="reviews.subtitle">Реальные отзывы от реальных студентов — присланные прямо из WhatsApp.</p>
+        <p class="text-slate-500 leading-relaxed" data-i18n="reviews.subtitle">Реальные отзывы от реальных студентов — присланные прямо из WhatsApp.</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
 
         <!-- Real student review card -->
-        <!-- To feature another student: duplicate this card, swap the photo in img/, name, and quote below. -->
-        <div data-aos="fade-up" class="bg-white shadow-xl rounded-2xl p-6 flex flex-col">
+        <div data-aos="fade-up" class="bg-white shadow-card border border-slate-100 rounded-2xl p-6 flex flex-col">
           <div class="flex items-center gap-3">
-            <img class="w-12 h-12 rounded-full object-cover flex-shrink-0" src="img/WhatsApp_Image_2024-12-01_at_12.07.26_0903b7c7-removebg-preview.png" alt="Kazakhstan IELTS student" />
+            <img class="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-brand-100" src="img/WhatsApp_Image_2024-12-01_at_12.07.26_0903b7c7-removebg-preview.png" alt="Kazakhstan IELTS student" />
             <div>
-              <p class="font-semibold text-gray-800 text-sm" data-i18n="reviews.review1_name">Студент Kazakhstan IELTS</p>
+              <p class="font-semibold text-slate-800 text-sm" data-i18n="reviews.review1_name">Студент Kazakhstan IELTS</p>
               <div class="flex items-center gap-0.5 mt-0.5">
-                <svg class="w-3.5 h-3.5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-                <svg class="w-3.5 h-3.5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-                <svg class="w-3.5 h-3.5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-                <svg class="w-3.5 h-3.5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-                <svg class="w-3.5 h-3.5" style="color:var(--brand-cta)" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+                <svg class="w-3.5 h-3.5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+                <svg class="w-3.5 h-3.5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+                <svg class="w-3.5 h-3.5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+                <svg class="w-3.5 h-3.5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+                <svg class="w-3.5 h-3.5 star-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.363 1.118l1.287 3.957c.3.922-.755 1.688-1.538 1.118l-3.367-2.446a1 1 0 00-1.176 0l-3.367 2.446c-.783.57-1.838-.196-1.538-1.118l1.287-3.957a1 1 0 00-.363-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
               </div>
             </div>
           </div>
-          <p class="text-gray-500 text-sm leading-relaxed mt-4 flex-1" data-i18n="reviews.review1_quote">«Присылайте нам свой отзыв в WhatsApp после занятия, и мы разместим вашу цитату прямо здесь — с именем и фото, если пожелаете.»</p>
-          <div class="mt-4 pt-4 border-t border-gray-100 flex items-center gap-1.5 text-xs text-gray-400">
+          <p class="text-slate-500 text-sm leading-relaxed mt-4 flex-1" data-i18n="reviews.review1_quote">«Присылайте нам свой отзыв в WhatsApp после занятия, и мы разместим вашу цитату прямо здесь — с именем и фото, если пожелаете.»</p>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs text-slate-400">
             <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
             <span data-i18n="reviews.shared_via">Отправлено через WhatsApp</span>
           </div>
         </div>
 
         <!-- Placeholder review slot 1 -->
-        <!-- Swap this whole card for a real review: replace the dashed box with <img src="img/your-photo.png" ...>, add the student's name, and replace the italic placeholder text with their quote. -->
-        <div data-aos="fade-up" data-aos-delay="100" class="bg-white shadow-xl rounded-2xl p-6 flex flex-col border-2 border-dashed border-gray-200">
+        <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-2xl p-6 flex flex-col border-2 border-dashed border-slate-200 hover:border-brand-300 transition">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 text-gray-400 text-xl">🙂</div>
+            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-400 text-xl">🙂</div>
             <div>
-              <p class="font-semibold text-gray-400 text-sm" data-i18n="reviews.placeholder_name">Ваше имя здесь</p>
-              <p class="text-xs text-gray-400" data-i18n="reviews.placeholder_sub">Фото и оценка скоро появятся</p>
+              <p class="font-semibold text-slate-400 text-sm" data-i18n="reviews.placeholder_name">Ваше имя здесь</p>
+              <p class="text-xs text-slate-400" data-i18n="reviews.placeholder_sub">Фото и оценка скоро появятся</p>
             </div>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed mt-4 flex-1 italic" data-i18n="reviews.placeholder_quote">Место для следующего отзыва студента — напишите нам в WhatsApp, чтобы попасть сюда.</p>
+          <p class="text-slate-400 text-sm leading-relaxed mt-4 flex-1 italic" data-i18n="reviews.placeholder_quote">Место для следующего отзыва студента — напишите нам в WhatsApp, чтобы попасть сюда.</p>
         </div>
 
         <!-- Placeholder review slot 2 -->
-        <div data-aos="fade-up" data-aos-delay="200" class="bg-white shadow-xl rounded-2xl p-6 flex flex-col border-2 border-dashed border-gray-200 sm:col-span-2 lg:col-span-1">
+        <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-2xl p-6 flex flex-col border-2 border-dashed border-slate-200 hover:border-brand-300 transition sm:col-span-2 lg:col-span-1">
           <div class="flex items-center gap-3">
-            <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 text-gray-400 text-xl">🙂</div>
+            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-400 text-xl">🙂</div>
             <div>
-              <p class="font-semibold text-gray-400 text-sm" data-i18n="reviews.placeholder_name">Ваше имя здесь</p>
-              <p class="text-xs text-gray-400" data-i18n="reviews.placeholder_sub">Фото и оценка скоро появятся</p>
+              <p class="font-semibold text-slate-400 text-sm" data-i18n="reviews.placeholder_name">Ваше имя здесь</p>
+              <p class="text-xs text-slate-400" data-i18n="reviews.placeholder_sub">Фото и оценка скоро появятся</p>
             </div>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed mt-4 flex-1 italic" data-i18n="reviews.placeholder_quote">Место для следующего отзыва студента — напишите нам в WhatsApp, чтобы попасть сюда.</p>
+          <p class="text-slate-400 text-sm leading-relaxed mt-4 flex-1 italic" data-i18n="reviews.placeholder_quote">Место для следующего отзыва студента — напишите нам в WhatsApp, чтобы попасть сюда.</p>
         </div>
       </div>
 
       <div class="text-center mt-10">
-        <a href="https://wa.me/77081726414?text=Hi%2C+I+would+like+to+share+my+experience+with+Kazakhstan+IELTS." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-white rounded-full shadow-md hover:opacity-90 transition" style="background:#25d366">
+        <a href="https://wa.me/77081726414?text=Hi%2C+I+would+like+to+share+my+experience+with+Kazakhstan+IELTS." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white rounded-full shadow-soft hover:opacity-90 transition bg-[#25d366]">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
           <span data-i18n="reviews.cta">Оставить отзыв в WhatsApp</span>
         </a>
@@ -474,24 +502,22 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-8 pt-10 pb-4">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+  <footer class="bg-slate-900 text-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-8 pt-14 pb-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <!-- Branding -->
         <div>
-          <div class="relative inline-block">
-            <h2 class="font-bold text-lg pr-5 relative z-50">Kazakhstan IELTS</h2>
-            <svg class="w-9 h-9 absolute -top-1.5 -left-2.5 z-40" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M35.9645 2.94975C37.9171 0.997129 41.0829 0.997127 43.0355 2.94975L76.0502 35.9645C78.0029 37.9171 78.0029 41.0829 76.0503 43.0355L43.0355 76.0502C41.0829 78.0029 37.9171 78.0029 35.9645 76.0503L2.94975 43.0355C0.997129 41.0829 0.997127 37.9171 2.94975 35.9645L35.9645 2.94975Z" stroke="#26C1F2" stroke-width="2" />
-            </svg>
+          <div class="flex items-center gap-2.5">
+            <img src="img/Logo.png" alt="Kazakhstan IELTS" class="w-10 h-10 rounded-xl object-cover flex-shrink-0" />
+            <h2 class="font-bold text-lg">Kazakhstan IELTS</h2>
           </div>
-          <p class="text-sm text-gray-400 mt-3 leading-relaxed" data-i18n="footer.tagline">Онлайн-обучение английскому и подготовка к IELTS для учеников по всему Казахстану.</p>
+          <p class="text-sm text-slate-400 mt-4 leading-relaxed" data-i18n="footer.tagline">Онлайн-обучение английскому и подготовка к IELTS для учеников по всему Казахстану.</p>
         </div>
 
         <!-- For Students -->
         <div>
-          <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-3" data-i18n="footer.students_title">Студентам</h4>
-          <ul class="space-y-2 text-sm text-gray-400">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-slate-300 mb-4" data-i18n="footer.students_title">Студентам</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
             <li><a href="Kazakhstan_IELTS_course_tuition.html" class="hover:text-white transition" data-i18n="footer.students_tuition">Тарифы и цены</a></li>
             <li><a href="Kazakhstan_IELTS_course_tuition.html" class="hover:text-white transition" data-i18n="footer.students_materials">Бесплатные материалы</a></li>
             <li><a href="#reviews" class="hover:text-white transition" data-i18n="footer.students_reviews">Отзывы студентов</a></li>
@@ -500,8 +526,8 @@
 
         <!-- Quick Links -->
         <div>
-          <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-3" data-i18n="footer.quicklinks_title">Быстрые ссылки</h4>
-          <ul class="space-y-2 text-sm text-gray-400">
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-slate-300 mb-4" data-i18n="footer.quicklinks_title">Быстрые ссылки</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
             <li><a href="#top" class="hover:text-white transition" data-i18n="footer.quicklinks_home">Главная</a></li>
             <li><a href="#about" class="hover:text-white transition" data-i18n="footer.quicklinks_about">О нас</a></li>
             <li><a href="#courses" class="hover:text-white transition" data-i18n="footer.quicklinks_courses">Курсы</a></li>
@@ -511,15 +537,25 @@
 
         <!-- Contact -->
         <div>
-          <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-300 mb-3" data-i18n="footer.contact_title">Контакты</h4>
-          <ul class="space-y-2 text-sm text-gray-400">
-            <li><a href="https://wa.me/77081726414?text=Hi%2C+I+have+a+question+about+Kazakhstan+IELTS." target="_blank" rel="noopener" class="hover:text-white transition">WhatsApp: +7 708 172 6414</a></li>
-            <li><a href="https://instagram.com/Kazakhstan_ielts" target="_blank" rel="noopener" class="hover:text-white transition" data-i18n="footer.contact_instagram">Instagram: @Kazakhstan_ielts</a></li>
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-slate-300 mb-4" data-i18n="footer.contact_title">Контакты</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li>
+              <a href="https://wa.me/77081726414?text=Hi%2C+I+have+a+question+about+Kazakhstan+IELTS." target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white transition">
+                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
+                <span>WhatsApp: +7 708 172 6414</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/Kazakhstan_ielts" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white transition">
+                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                <span data-i18n="footer.contact_instagram">Instagram: @Kazakhstan_ielts</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div class="flex items-center justify-between flex-wrap gap-2 text-xs text-gray-500 mt-8 border-t border-gray-800 pt-4">
+      <div class="flex items-center justify-between flex-wrap gap-2 text-xs text-slate-500 mt-10 border-t border-slate-800 pt-5">
         <p data-i18n="footer.copyright">&copy; 2025 Kazakhstan IELTS. Все права защищены.</p>
         <a href="#top" class="hover:text-white transition" data-i18n="footer.backtotop">Наверх ↑</a>
       </div>
@@ -537,7 +573,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       AOS.init({
         once: true,
-        duration: 800
+        duration: 700,
+        easing: 'ease-out-cubic'
       });
     });
   </script>

@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Английский и подготовка к IELTS — курсы и тарифы</title>
+  <link rel="icon" type="image/png" href="img/Logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="js/i18n.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/skilline.css" />
   <script>
     tailwind.config = {
       theme: {
@@ -19,69 +21,35 @@
           },
           colors: {
             brand: {
-              50: '#f0f7ff',
-              100: '#e0effe',
-              200: '#bae0fd',
-              500: '#0284c7',
-              600: '#0369a1',
-              700: '#035485',
-              900: '#0c2a4a',
+              50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+              400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8',
+              800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
             },
             accent: {
-              50: '#fff7ed',
-              100: '#ffedd5',
-              500: '#f97316',
-              600: '#ea580c',
+              50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 400: '#fbbf24',
+              500: '#f59e0b', 600: '#d97706', 700: '#b45309'
             }
+          },
+          boxShadow: {
+            soft: '0 10px 40px -12px rgba(30, 58, 138, 0.18)',
+            card: '0 8px 30px -10px rgba(15, 23, 42, 0.10)'
           }
         }
       }
     }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    [x-cloak] { display: none !important; }
-    .gradient-border {
-      background: linear-gradient(135deg, #0284c7 0%, #6366f1 50%, #f97316 100%);
-    }
-
-    /* Homepage-matching header styles */
-    :root {
-      --brand-primary: #123a7a;
-      --brand-primary-dark: #0d2c5c;
-      --brand-red: #c1273f;
-    }
-    .site-header, .site-header * {
-      font-family: 'Poppins', sans-serif;
-    }
-    .dropdown-panel {
-      opacity: 0;
-      transform: translateY(-8px);
-      pointer-events: none;
-      transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
-    }
-    .dropdown-panel.dropdown-open {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-  </style>
 </head>
-<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen py-6 px-3 sm:px-6 lg:px-8" data-i18n-title="meta.tuition_title">
+<body class="bg-slate-50 text-slate-700 font-sans antialiased min-h-screen" data-i18n-title="meta.tuition_title">
 
   <!-- Site Navigation Header (matches homepage) -->
-  <header x-data="{ open: false, coursesOpen: false, langOpen: false }" class="site-header w-full text-gray-700 bg-white sticky top-0 z-50 shadow-sm -mx-3 -mt-6 sm:-mx-6 lg:-mx-8">
+  <header x-data="{ open: false, coursesOpen: false, langOpen: false }" class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
     <div class="flex flex-col max-w-screen-xl px-4 sm:px-8 mx-auto md:items-center md:justify-between md:flex-row">
-      <div class="flex flex-row items-center justify-between py-5 w-full md:w-auto">
-        <div class="relative md:mt-2">
-          <a href="index.html" class="text-lg relative z-50 font-bold tracking-widest text-gray-900 rounded-lg focus:outline-none focus:shadow-outline">
-            Kazakhstan IELTS
-          </a>
-          <svg class="h-11 z-40 absolute -top-2 -left-3" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M35.2574 2.24264C37.6005 -0.100501 41.3995 -0.100505 43.7426 2.24264L76.7574 35.2574C79.1005 37.6005 79.1005 41.3995 76.7574 43.7426L43.7426 76.7574C41.3995 79.1005 37.6005 79.1005 35.2574 76.7574L2.24264 43.7426C-0.100501 41.3995 -0.100505 37.6005 2.24264 35.2574L35.2574 2.24264Z" fill="#65DAFF" />
-          </svg>
-        </div>
-        <button aria-label="Toggle Navigation Menu" class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+      <div class="flex flex-row items-center justify-between py-4 w-full md:w-auto">
+        <a href="index.html" class="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg">
+          <img src="img/Logo.png" alt="Kazakhstan IELTS" class="w-10 h-10 rounded-xl object-cover shadow-soft flex-shrink-0" />
+          <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900">Kazakhstan IELTS</span>
+        </a>
+        <button aria-label="Toggle Navigation Menu" class="rounded-lg md:hidden text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" @click="open = !open">
           <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
             <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
             <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
@@ -89,38 +57,38 @@
         </button>
       </div>
 
-      <nav :class="{ 'flex': open, 'hidden': !open }" class="hidden md:flex md:flex-row flex-col flex-grow md:items-center pb-4 md:pb-0 md:justify-end transition duration-300">
-        <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 md:ml-2 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="index.html" data-i18n="nav.home">Главная</a>
-        <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 md:ml-2 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="index.html#about" data-i18n="nav.about">О нас</a>
+      <nav :class="{ 'flex': open, 'hidden': !open }" class="hidden md:flex md:flex-row flex-col flex-grow md:items-center pb-4 md:pb-0 md:justify-end gap-0.5 md:gap-1 transition duration-300">
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html" data-i18n="nav.home">Главная</a>
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#about" data-i18n="nav.about">О нас</a>
 
-        <div class="relative md:ml-2" @mouseenter="coursesOpen = true" @mouseleave="coursesOpen = false">
-          <button @click="coursesOpen = !coursesOpen" class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 w-full text-left flex items-center gap-1 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+        <div class="relative" @mouseenter="coursesOpen = true" @mouseleave="coursesOpen = false">
+          <button @click="coursesOpen = !coursesOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
             <span data-i18n="nav.courses">Курсы</span>
             <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
           </button>
-          <div x-show="coursesOpen" x-cloak :class="{ 'dropdown-open': coursesOpen }" class="dropdown-panel md:absolute md:top-full md:left-0 md:w-56 md:bg-white md:shadow-xl md:rounded-lg md:pt-3 md:pb-2">
-            <a href="index.html#courses" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" data-i18n="nav.courses_general">Общий английский</a>
-            <a href="index.html#courses" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50" data-i18n="nav.courses_ielts">Подготовка к IELTS</a>
-            <a href="Kazakhstan_IELTS_course_tuition.html" class="block px-4 py-2 text-sm font-semibold hover:bg-gray-50" style="color: var(--brand-primary)" data-i18n="nav.courses_pricing">Полные тарифы и калькулятор</a>
+          <div x-show="coursesOpen" x-cloak :class="{ 'dropdown-open': coursesOpen }" class="dropdown-panel md:absolute md:top-full md:left-0 md:w-64 md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2 md:mt-2">
+            <a href="index.html#courses" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_general">Общий английский</a>
+            <a href="index.html#courses" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_ielts">Подготовка к IELTS</a>
+            <a href="Kazakhstan_IELTS_course_tuition.html" class="block px-4 py-2.5 text-sm rounded-xl font-semibold text-brand-700 bg-brand-50" data-i18n="nav.courses_pricing">Полные тарифы и калькулятор</a>
           </div>
         </div>
 
-        <a class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 md:ml-2 hover:text-gray-900 focus:outline-none focus:shadow-outline" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a>
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a>
 
-        <div class="relative md:ml-2" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
-          <button @click="langOpen = !langOpen" class="px-4 py-2 mt-2 text-sm bg-transparent rounded-lg md:mt-0 w-full text-left flex items-center gap-1 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+        <div class="relative md:ml-1" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
+          <button @click="langOpen = !langOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1.5 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
             <span>🌐</span>
             <span data-lang-label>RU</span>
             <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
           </button>
-          <div x-show="langOpen" x-cloak :class="{ 'dropdown-open': langOpen }" class="dropdown-panel md:absolute md:top-full md:right-0 md:w-40 md:bg-white md:shadow-xl md:rounded-lg md:pt-3 md:pb-2">
-            <button type="button" data-lang-option="ru" @click="i18n.apply('ru'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Русский</button>
-            <button type="button" data-lang-option="kk" @click="i18n.apply('kk'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Қазақша</button>
-            <button type="button" data-lang-option="en" @click="i18n.apply('en'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">English</button>
+          <div x-show="langOpen" x-cloak :class="{ 'dropdown-open': langOpen }" class="dropdown-panel md:absolute md:top-full md:right-0 md:w-40 md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2 md:mt-2">
+            <button type="button" data-lang-option="ru" @click="i18n.apply('ru'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Русский</button>
+            <button type="button" data-lang-option="kk" @click="i18n.apply('kk'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Қазақша</button>
+            <button type="button" data-lang-option="en" @click="i18n.apply('en'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">English</button>
           </div>
         </div>
 
-        <a class="px-6 py-3 mt-2 text-sm text-center text-white rounded-full md:mt-0 md:ml-4 shadow-sm transition flex items-center justify-center gap-2" style="background:#25d366" href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener">
+        <a class="mt-2 md:mt-0 md:ml-3 inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm text-center text-white rounded-full shadow-soft hover:opacity-90 transition bg-[#25d366]" href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
           <span data-i18n="nav.whatsapp">Написать в WhatsApp</span>
         </a>
@@ -128,182 +96,214 @@
     </div>
   </header>
 
-  <div class="max-w-4xl mx-auto page-container space-y-8 mt-8">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 py-8 sm:py-10">
 
     <!-- Hero Banner Header -->
-    <div class="bg-gradient-to-br from-slate-900 via-brand-900 to-indigo-950 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-      <div class="absolute -right-12 -top-12 w-64 h-64 bg-brand-500/15 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -left-12 -bottom-12 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
-
+    <div class="bg-gradient-to-br from-brand-950 via-brand-900 to-indigo-950 bg-mesh-dark text-white rounded-3xl p-6 sm:p-10 shadow-soft relative overflow-hidden">
       <div class="relative z-10">
-        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
           <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-brand-100 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
             Kazakhstan IELTS
           </span>
-          <span class="text-xs bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 px-3 py-1 rounded-full font-medium" data-i18n="tuition.enrollment_badge">
+          <span class="text-xs bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 px-3 py-1.5 rounded-full font-medium" data-i18n="tuition.enrollment_badge">
             ✓ Открыт набор новых студентов
           </span>
         </div>
 
-        <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-3 text-white leading-tight">
-          <span data-i18n="tuition.hero_title1">Английский язык и IELTS</span> <br class="hidden sm:inline"/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 via-sky-300 to-amber-200" data-i18n="tuition.hero_title2">Тарифы и программа обучения</span>
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 text-white leading-tight">
+          <span data-i18n="tuition.hero_title1">Английский язык и IELTS</span> <br class="hidden sm:inline"/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 via-sky-300 to-accent-200" data-i18n="tuition.hero_title2">Тарифы и программа обучения</span>
         </h1>
 
         <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed" data-i18n="tuition.hero_subtitle">
           Структурированное обучение английскому с понятными ценами, гибким расписанием, бесплатными пробными материалами и специальной скидкой при оплате вперёд.
         </p>
-      </div>
-    </div>
 
-    <!-- Course Offerings Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 break-inside-avoid">
-      
-      <!-- General English Card -->
-      <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-slate-200 hover:border-brand-500/40 transition-all shadow-card flex flex-col justify-between">
-        <div>
-          <div class="flex justify-between items-start mb-4">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-7">
+          <div class="flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-3.5 py-3">
+            <span class="text-lg flex-shrink-0">💻</span>
             <div>
-              <span class="text-xs font-extrabold text-brand-700 bg-brand-50 border border-brand-100 px-3 py-1 rounded-md uppercase tracking-wider" data-i18n="tuition.ge.tag">Основа и беглость речи</span>
-              <h2 class="text-2xl font-bold text-slate-900 mt-2" data-i18n="tuition.ge.title">Общий английский</h2>
-            </div>
-            <div class="w-12 h-12 bg-brand-50 rounded-2xl flex items-center justify-center text-2xl shadow-inner">
-              🗣️
+              <p class="font-bold text-white text-xs sm:text-sm leading-tight" data-i18n="key_facts.online_title">100% Онлайн</p>
             </div>
           </div>
-          <p class="text-slate-600 text-xs sm:text-sm mb-6 leading-relaxed" data-i18n="tuition.ge.desc">
-            Развивайте уверенность в речи, расширяйте словарный запас, совершенствуйте грамматику и говорите естественно в реальных жизненных ситуациях.
-          </p>
-
-          <div class="space-y-4">
-            <!-- Group Option -->
-            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-              <div class="flex justify-between items-baseline mb-2">
-                <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
-                  <span>👥</span> <span data-i18n="tuition.ge.group_label">Групповое занятие</span> <span class="text-xs font-normal text-slate-500" data-i18n="tuition.ge.group_sub">(макс. 3–4 ученика)</span>
-                </span>
-                <span class="text-brand-600 font-black text-lg">3,000 <span class="text-xs text-slate-500 font-semibold" data-i18n="tuition.ge.group_price_unit">KZT / занятие</span></span>
-              </div>
-              <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-200/60">
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ge.group_schedule_label">📅 Расписание:</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ge.group_schedule_value">3 раза в неделю</span>
-                </li>
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ge.group_dur1_label">⏱️ Длительность (1–3 ученика):</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ge.group_dur1_value">1 час (60 мин)</span>
-                </li>
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ge.group_dur2_label">⏱️ Длительность (4 ученика):</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ge.group_dur2_value">1 час 20 мин (80 мин)</span>
-                </li>
-              </ul>
+          <div class="flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-3.5 py-3">
+            <span class="text-lg flex-shrink-0">📈</span>
+            <div>
+              <p class="font-bold text-white text-xs sm:text-sm leading-tight" data-i18n="key_facts.level_title">От уровня A2</p>
             </div>
-
-            <!-- Individual Option -->
-            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-              <div class="flex justify-between items-baseline mb-2">
-                <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
-                  <span>👤</span> <span data-i18n="tuition.ge.ind_label">Индивидуальное занятие</span> <span class="text-xs font-normal text-slate-500" data-i18n="tuition.ge.ind_sub">(1-на-1, индивидуально)</span>
-                </span>
-                <span class="text-brand-600 font-black text-lg">5,000 <span class="text-xs text-slate-500 font-semibold" data-i18n="tuition.ge.ind_price_unit">KZT / занятие</span></span>
-              </div>
-              <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-200/60">
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ge.ind_freq_label">📅 Частота занятий:</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ge.ind_freq_value">Без ограничений (по договорённости)</span>
-                </li>
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ge.ind_pers_label">🎯 Персонализация:</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ge.ind_pers_value">100% под ваш темп</span>
-                </li>
-              </ul>
+          </div>
+          <div class="flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-3.5 py-3">
+            <span class="text-lg flex-shrink-0">🎓</span>
+            <div>
+              <p class="font-bold text-white text-xs sm:text-sm leading-tight" data-i18n="key_facts.native_title">Носитель языка</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/15 rounded-xl px-3.5 py-3">
+            <span class="text-lg flex-shrink-0">📍</span>
+            <div>
+              <p class="font-bold text-white text-xs sm:text-sm leading-tight" data-i18n="key_facts.location_title">Школа в Алматы</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Course Offerings Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- General English Card -->
+      <div class="bg-white rounded-3xl shadow-card border border-slate-200 overflow-hidden flex flex-col">
+        <div class="h-1.5 bg-gradient-to-r from-brand-500 to-brand-700"></div>
+        <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <span class="text-xs font-extrabold text-brand-700 bg-brand-50 border border-brand-100 px-3 py-1 rounded-md uppercase tracking-wider" data-i18n="tuition.ge.tag">Основа и беглость речи</span>
+                <h2 class="text-2xl font-bold text-slate-900 mt-2" data-i18n="tuition.ge.title">Общий английский</h2>
+              </div>
+              <div class="w-12 h-12 bg-brand-50 rounded-2xl flex items-center justify-center text-2xl shadow-inner flex-shrink-0">
+                🗣️
+              </div>
+            </div>
+            <p class="text-slate-600 text-xs sm:text-sm mb-6 leading-relaxed" data-i18n="tuition.ge.desc">
+              Развивайте уверенность в речи, расширяйте словарный запас, совершенствуйте грамматику и говорите естественно в реальных жизненных ситуациях.
+            </p>
+
+            <div class="space-y-4">
+              <!-- Group Option -->
+              <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
+                <div class="flex justify-between items-baseline mb-2 gap-2">
+                  <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5 flex-wrap">
+                    <span>👥</span> <span data-i18n="tuition.ge.group_label">Групповое занятие</span> <span class="text-xs font-normal text-slate-500" data-i18n="tuition.ge.group_sub">(макс. 3–4 ученика)</span>
+                  </span>
+                  <span class="text-brand-600 font-black text-lg whitespace-nowrap">3,000 <span class="text-xs text-slate-500 font-semibold" data-i18n="tuition.ge.group_price_unit">KZT / занятие</span></span>
+                </div>
+                <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-200/60">
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ge.group_schedule_label">📅 Расписание:</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ge.group_schedule_value">3 раза в неделю</span>
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ge.group_dur1_label">⏱️ Длительность (1–3 ученика):</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ge.group_dur1_value">1 час (60 мин)</span>
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ge.group_dur2_label">⏱️ Длительность (4 ученика):</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ge.group_dur2_value">1 час 20 мин (80 мин)</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Individual Option -->
+              <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
+                <div class="flex justify-between items-baseline mb-2 gap-2">
+                  <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5 flex-wrap">
+                    <span>👤</span> <span data-i18n="tuition.ge.ind_label">Индивидуальное занятие</span> <span class="text-xs font-normal text-slate-500" data-i18n="tuition.ge.ind_sub">(1-на-1, индивидуально)</span>
+                  </span>
+                  <span class="text-brand-600 font-black text-lg whitespace-nowrap">5,000 <span class="text-xs text-slate-500 font-semibold" data-i18n="tuition.ge.ind_price_unit">KZT / занятие</span></span>
+                </div>
+                <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-200/60">
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ge.ind_freq_label">📅 Частота занятий:</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ge.ind_freq_value">Без ограничений (по договорённости)</span>
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ge.ind_pers_label">🎯 Персонализация:</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ge.ind_pers_value">100% под ваш темп</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/77081726414?text=Hi%2C+I+am+interested+in+the+General+English+course." target="_blank" rel="noopener" class="mt-6 block text-center px-6 py-3 text-sm font-semibold text-white rounded-full hover:opacity-90 transition bg-brand-600" data-i18n="ge.cta">Написать в WhatsApp</a>
+        </div>
+      </div>
 
       <!-- IELTS Preparation Card -->
-      <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-slate-200 hover:border-indigo-500/40 transition-all shadow-card flex flex-col justify-between">
-        <div>
-          <div class="flex justify-between items-start mb-4">
-            <div>
-              <span class="text-xs font-extrabold text-indigo-700 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-md uppercase tracking-wider" data-i18n="tuition.ielts.tag">Экзаменационное мастерство</span>
-              <h2 class="text-2xl font-bold text-slate-900 mt-2" data-i18n="tuition.ielts.title">Программа подготовки к IELTS</h2>
+      <div class="bg-white rounded-3xl shadow-card border border-slate-200 overflow-hidden flex flex-col">
+        <div class="h-1.5 bg-gradient-to-r from-indigo-500 to-accent-600"></div>
+        <div class="p-6 sm:p-7 flex flex-col justify-between flex-1">
+          <div>
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <span class="text-xs font-extrabold text-indigo-700 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-md uppercase tracking-wider" data-i18n="tuition.ielts.tag">Экзаменационное мастерство</span>
+                <h2 class="text-2xl font-bold text-slate-900 mt-2" data-i18n="tuition.ielts.title">Программа подготовки к IELTS</h2>
+              </div>
+              <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl shadow-inner flex-shrink-0">
+                🎯
+              </div>
             </div>
-            <div class="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-2xl shadow-inner">
-              🎯
+            <p class="text-slate-600 text-xs sm:text-sm mb-6 leading-relaxed" data-i18n="tuition.ielts.desc">
+              Целевые стратегии, интенсивная отработка навыков и настоящие экзаменационные материалы для достижения нужного балла.
+            </p>
+
+            <div class="space-y-4">
+              <!-- Group Option -->
+              <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
+                <div class="flex justify-between items-baseline mb-2 gap-2">
+                  <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5 flex-wrap">
+                    <span>👥</span> <span data-i18n="tuition.ielts.group_label">Групповое занятие</span> <span class="text-xs font-normal text-slate-500" data-i18n="tuition.ielts.group_sub">(макс. 3–4 ученика)</span>
+                  </span>
+                  <span class="text-indigo-600 font-black text-lg whitespace-nowrap">4,000 <span class="text-xs text-slate-500 font-semibold" data-i18n="tuition.ielts.group_price_unit">KZT / час</span></span>
+                </div>
+                <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-200/60">
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ielts.group_duration_label">📅 Стандартная длительность:</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ielts.group_duration_value">2 месяца (3 раза в неделю)</span>
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ielts.group_dur1_label">⏱️ Длительность (1–3 ученика):</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ielts.group_dur1_value">1 час (60 мин)</span>
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ielts.group_dur2_label">⏱️ Длительность (4 ученика):</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ielts.group_dur2_value">1 час 20 мин (80 мин)</span>
+                  </li>
+                  <li class="flex items-center justify-between gap-2 text-indigo-600">
+                    <span data-i18n="tuition.ielts.group_flex_label">🔄 Гибкость:</span>
+                    <span class="font-semibold text-right" data-i18n="tuition.ielts.group_flex_value">Продление при необходимости доп. практики</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Individual Option -->
+              <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
+                <div class="flex justify-between items-baseline mb-2 gap-2">
+                  <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5 flex-wrap">
+                    <span>👤</span> <span data-i18n="tuition.ielts.ind_label">Индивидуальное занятие</span> <span class="text-xs font-normal text-slate-500" data-i18n="tuition.ielts.ind_sub">(1-на-1, индивидуально)</span>
+                  </span>
+                  <span class="text-indigo-600 font-black text-lg whitespace-nowrap">6,000 <span class="text-xs text-slate-500 font-semibold" data-i18n="tuition.ielts.ind_price_unit">KZT / занятие</span></span>
+                </div>
+                <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-200/60">
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ielts.ind_schedule_label">📅 Обычное расписание:</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ielts.ind_schedule_value">3 раза в неделю (или по договорённости)</span>
+                  </li>
+                  <li class="flex items-center justify-between gap-2">
+                    <span data-i18n="tuition.ielts.ind_custom_label">🎯 Настройка:</span>
+                    <span class="font-semibold text-slate-800 text-right" data-i18n="tuition.ielts.ind_custom_value">На основе целевого балла</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <p class="text-slate-600 text-xs sm:text-sm mb-6 leading-relaxed" data-i18n="tuition.ielts.desc">
-            Целевые стратегии, интенсивная отработка навыков и настоящие экзаменационные материалы для достижения нужного балла.
-          </p>
-
-          <div class="space-y-4">
-            <!-- Group Option -->
-            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-              <div class="flex justify-between items-baseline mb-2">
-                <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
-                  <span>👥</span> <span data-i18n="tuition.ielts.group_label">Групповое занятие</span> <span class="text-xs font-normal text-slate-500" data-i18n="tuition.ielts.group_sub">(макс. 3–4 ученика)</span>
-                </span>
-                <span class="text-indigo-600 font-black text-lg">4,000 <span class="text-xs text-slate-500 font-semibold" data-i18n="tuition.ielts.group_price_unit">KZT / час</span></span>
-              </div>
-              <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-200/60">
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ielts.group_duration_label">📅 Стандартная длительность:</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ielts.group_duration_value">2 месяца (3 раза в неделю)</span>
-                </li>
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ielts.group_dur1_label">⏱️ Длительность (1–3 ученика):</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ielts.group_dur1_value">1 час (60 мин)</span>
-                </li>
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ielts.group_dur2_label">⏱️ Длительность (4 ученика):</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ielts.group_dur2_value">1 час 20 мин (80 мин)</span>
-                </li>
-                <li class="flex items-center justify-between text-indigo-600">
-                  <span data-i18n="tuition.ielts.group_flex_label">🔄 Гибкость:</span>
-                  <span class="font-semibold" data-i18n="tuition.ielts.group_flex_value">Продление при необходимости доп. практики</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Individual Option -->
-            <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80">
-              <div class="flex justify-between items-baseline mb-2">
-                <span class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
-                  <span>👤</span> <span data-i18n="tuition.ielts.ind_label">Индивидуальное занятие</span> <span class="text-xs font-normal text-slate-500" data-i18n="tuition.ielts.ind_sub">(1-на-1, индивидуально)</span>
-                </span>
-                <span class="text-indigo-600 font-black text-lg">6,000 <span class="text-xs text-slate-500 font-semibold" data-i18n="tuition.ielts.ind_price_unit">KZT / занятие</span></span>
-              </div>
-              <ul class="text-xs text-slate-600 space-y-1.5 pt-2 border-t border-slate-200/60">
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ielts.ind_schedule_label">📅 Обычное расписание:</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ielts.ind_schedule_value">3 раза в неделю (или по договорённости)</span>
-                </li>
-                <li class="flex items-center justify-between">
-                  <span data-i18n="tuition.ielts.ind_custom_label">🎯 Настройка:</span>
-                  <span class="font-semibold text-slate-800" data-i18n="tuition.ielts.ind_custom_value">На основе целевого балла</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <a href="https://wa.me/77081726414?text=Hi%2C+I+am+interested+in+the+IELTS+Prep+course." target="_blank" rel="noopener" class="mt-6 block text-center px-6 py-3 text-sm font-semibold text-white rounded-full hover:opacity-90 transition bg-brand-600" data-i18n="ielts.cta">Написать в WhatsApp</a>
         </div>
       </div>
 
     </div>
 
     <!-- Interactive Student Tuition & Discount Calculation Section -->
-    <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl break-inside-avoid">
+    <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 bg-mesh-dark rounded-3xl p-6 sm:p-8 text-white shadow-soft">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-700/80 pb-6 mb-6">
         <div>
-          <div class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2" data-i18n="tuition.calc.tool_badge">
+          <div class="inline-flex items-center gap-2 bg-accent-500/20 border border-accent-500/30 text-accent-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2" data-i18n="tuition.calc.tool_badge">
             🧮 Инструмент прозрачности для студентов
           </div>
           <h3 class="text-2xl font-black text-white" data-i18n="tuition.calc.title">Интерактивный калькулятор тарифов и экономии</h3>
           <p class="text-slate-300 text-xs sm:text-sm mt-1" data-i18n="tuition.calc.subtitle">Выберите параметры, чтобы увидеть точное количество занятий, стандартную стоимость, скидку и итоговую сумму к оплате.</p>
         </div>
 
-        <div class="bg-amber-500 text-slate-950 font-extrabold px-4 py-2 rounded-2xl text-center text-sm shadow-lg flex items-center justify-center gap-2">
+        <div class="bg-accent-500 text-slate-950 font-extrabold px-4 py-2.5 rounded-2xl text-center text-sm shadow-lg flex items-center justify-center gap-2">
           <span data-i18n="tuition.calc.save_banner">🔥 Экономьте 10 000 KZT при оплате 2 месяцев вперёд!</span>
         </div>
       </div>
@@ -314,7 +314,7 @@
         <!-- Select Program -->
         <div class="space-y-1.5">
           <label class="block text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="tuition.calc.select_program_label">Выберите программу</label>
-          <select id="calcProgram" onchange="calculateTuition()" class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium">
+          <select id="calcProgram" onchange="calculateTuition()" class="select-caret-dark w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium">
             <option value="ge_group" data-i18n="tuition.calc.opt_ge_group">Общий английский — Группа (3,000 KZT/занятие)</option>
             <option value="ge_ind" data-i18n="tuition.calc.opt_ge_ind">Общий английский — Индивидуально (5,000 KZT/занятие)</option>
             <option value="ielts_group" data-i18n="tuition.calc.opt_ielts_group">Подготовка к IELTS — Группа (4,000 KZT/час)</option>
@@ -325,7 +325,7 @@
         <!-- Classes Per Week -->
         <div class="space-y-1.5">
           <label class="block text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="tuition.calc.freq_label">Занятий в неделю</label>
-          <select id="calcFrequency" onchange="calculateTuition()" class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium">
+          <select id="calcFrequency" onchange="calculateTuition()" class="select-caret-dark w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium">
             <option value="3" selected data-i18n="tuition.calc.opt_freq3">3 занятия / неделю (стандартное расписание)</option>
             <option value="2" data-i18n="tuition.calc.opt_freq2">2 занятия / неделю</option>
             <option value="4" data-i18n="tuition.calc.opt_freq4">4 занятия / неделю</option>
@@ -336,7 +336,7 @@
         <!-- Payment Plan Duration -->
         <div class="space-y-1.5">
           <label class="block text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="tuition.calc.duration_label">План оплаты</label>
-          <select id="calcDuration" onchange="calculateTuition()" class="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium">
+          <select id="calcDuration" onchange="calculateTuition()" class="select-caret-dark w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium">
             <option value="2" selected data-i18n="tuition.calc.opt_dur2">Оплата за 2 месяца вперёд (со скидкой 10,000 KZT!)</option>
             <option value="1" data-i18n="tuition.calc.opt_dur1">Стандартная оплата за 1 месяц (без скидки)</option>
           </select>
@@ -360,9 +360,9 @@
         </div>
 
         <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-700/50">
-          <span class="text-[11px] font-bold text-amber-400 uppercase block mb-1" data-i18n="tuition.calc.discount_label">Специальная скидка</span>
-          <span id="resDiscount" class="text-2xl font-black text-amber-400">-10,000 KZT</span>
-          <span id="resDiscountNote" class="text-[10px] text-amber-300 block mt-0.5">Скидка за предоплату применена!</span>
+          <span class="text-[11px] font-bold text-accent-400 uppercase block mb-1" data-i18n="tuition.calc.discount_label">Специальная скидка</span>
+          <span id="resDiscount" class="text-2xl font-black text-accent-400">-10,000 KZT</span>
+          <span id="resDiscountNote" class="text-[10px] text-accent-300 block mt-0.5">Скидка за предоплату применена!</span>
         </div>
 
         <div class="p-3 bg-gradient-to-br from-brand-600 to-indigo-600 rounded-xl border border-brand-400/30 text-white">
@@ -376,8 +376,8 @@
     </div>
 
     <!-- Detailed Cost Calculation & Comparison Table -->
-    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 shadow-card break-inside-avoid">
-      <div class="flex items-center justify-between mb-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-slate-200">
+      <div class="flex items-center justify-between mb-5">
         <div>
           <h3 class="font-bold text-slate-900 text-xl flex items-center gap-2" data-i18n="tuition.table.title">
             <span>📊</span> Разбивка расчёта за стандартные 2 месяца
@@ -386,15 +386,16 @@
         </div>
       </div>
 
-      <div class="overflow-x-auto">
+      <!-- Desktop table -->
+      <div class="overflow-x-auto hidden sm:block">
         <table class="w-full text-left border-collapse">
           <thead>
             <tr class="border-b-2 border-slate-200 text-xs font-extrabold text-slate-600 uppercase tracking-wider bg-slate-50">
-              <th class="py-3 px-3" data-i18n="tuition.table.th_program">Программа и формат</th>
+              <th class="py-3 px-3 rounded-l-lg" data-i18n="tuition.table.th_program">Программа и формат</th>
               <th class="py-3 px-3" data-i18n="tuition.table.th_rate">Цена за занятие</th>
               <th class="py-3 px-3" data-i18n="tuition.table.th_1month">1 месяц (12 занятий)</th>
               <th class="py-3 px-3" data-i18n="tuition.table.th_2months">2 месяца, обычная оплата</th>
-              <th class="py-3 px-3 text-right bg-emerald-50 text-emerald-800" data-i18n="tuition.table.th_2months_upfront">2 месяца вперёд (экономия 10,000 KZT)</th>
+              <th class="py-3 px-3 text-right bg-emerald-50 text-emerald-800 rounded-r-lg" data-i18n="tuition.table.th_2months_upfront">2 месяца вперёд (экономия 10,000 KZT)</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 text-xs sm:text-sm text-slate-700">
@@ -452,15 +453,75 @@
           </tbody>
         </table>
       </div>
+
+      <!-- Mobile stacked cards (same data, no horizontal scroll) -->
+      <div class="sm:hidden space-y-4">
+        <!-- Card 1: GE Group -->
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <p class="font-bold text-slate-900 text-sm"><span data-i18n="tuition.table.ge_name">Общий английский</span></p>
+          <p class="text-xs text-slate-500 mb-3" data-i18n="tuition.table.ge_group_sub">👥 Групповое занятие (3-4 макс.)</p>
+          <div class="grid grid-cols-2 gap-y-1.5 text-xs">
+            <span class="text-slate-500" data-i18n="tuition.table.th_rate">Цена за занятие</span><span class="text-right font-semibold text-brand-600">3,000 KZT</span>
+            <span class="text-slate-500" data-i18n="tuition.table.th_1month">1 месяц (12 занятий)</span><span class="text-right text-slate-600">36,000 KZT</span>
+            <span class="text-slate-500" data-i18n="tuition.table.th_2months">2 месяца, обычная оплата</span><span class="text-right text-slate-400 line-through">72,000 KZT</span>
+          </div>
+          <div class="mt-3 pt-3 divider-dashed flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-700" data-i18n="tuition.table.th_2months_upfront">2 месяца вперёд (экономия 10,000 KZT)</span>
+            <span class="font-black text-emerald-600">62,000 KZT</span>
+          </div>
+        </div>
+        <!-- Card 2: GE Individual -->
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <p class="font-bold text-slate-900 text-sm"><span data-i18n="tuition.table.ge_name">Общий английский</span></p>
+          <p class="text-xs text-slate-500 mb-3" data-i18n="tuition.table.ge_ind_sub">👤 Индивидуально (1-на-1)</p>
+          <div class="grid grid-cols-2 gap-y-1.5 text-xs">
+            <span class="text-slate-500" data-i18n="tuition.table.th_rate">Цена за занятие</span><span class="text-right font-semibold text-brand-600">5,000 KZT</span>
+            <span class="text-slate-500" data-i18n="tuition.table.th_1month">1 месяц (12 занятий)</span><span class="text-right text-slate-600">60,000 KZT</span>
+            <span class="text-slate-500" data-i18n="tuition.table.th_2months">2 месяца, обычная оплата</span><span class="text-right text-slate-400 line-through">120,000 KZT</span>
+          </div>
+          <div class="mt-3 pt-3 divider-dashed flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-700" data-i18n="tuition.table.th_2months_upfront">2 месяца вперёд (экономия 10,000 KZT)</span>
+            <span class="font-black text-emerald-600">110,000 KZT</span>
+          </div>
+        </div>
+        <!-- Card 3: IELTS Group -->
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <p class="font-bold text-slate-900 text-sm"><span data-i18n="tuition.table.ielts_name">Подготовка к IELTS</span></p>
+          <p class="text-xs text-slate-500 mb-3" data-i18n="tuition.table.ielts_group_sub">👥 Групповое занятие (3-4 макс.)</p>
+          <div class="grid grid-cols-2 gap-y-1.5 text-xs">
+            <span class="text-slate-500" data-i18n="tuition.table.th_rate">Цена за занятие</span><span class="text-right font-semibold text-indigo-600">4,000 KZT / час</span>
+            <span class="text-slate-500" data-i18n="tuition.table.th_1month">1 месяц (12 занятий)</span><span class="text-right text-slate-600">48,000 KZT</span>
+            <span class="text-slate-500" data-i18n="tuition.table.th_2months">2 месяца, обычная оплата</span><span class="text-right text-slate-400 line-through">96,000 KZT</span>
+          </div>
+          <div class="mt-3 pt-3 divider-dashed flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-700" data-i18n="tuition.table.th_2months_upfront">2 месяца вперёд (экономия 10,000 KZT)</span>
+            <span class="font-black text-emerald-600">86,000 KZT</span>
+          </div>
+        </div>
+        <!-- Card 4: IELTS Individual -->
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <p class="font-bold text-slate-900 text-sm"><span data-i18n="tuition.table.ielts_name">Подготовка к IELTS</span></p>
+          <p class="text-xs text-slate-500 mb-3" data-i18n="tuition.table.ielts_ind_sub">👤 Индивидуально (1-на-1)</p>
+          <div class="grid grid-cols-2 gap-y-1.5 text-xs">
+            <span class="text-slate-500" data-i18n="tuition.table.th_rate">Цена за занятие</span><span class="text-right font-semibold text-indigo-600">6,000 KZT</span>
+            <span class="text-slate-500" data-i18n="tuition.table.th_1month">1 месяц (12 занятий)</span><span class="text-right text-slate-600">72,000 KZT</span>
+            <span class="text-slate-500" data-i18n="tuition.table.th_2months">2 месяца, обычная оплата</span><span class="text-right text-slate-400 line-through">144,000 KZT</span>
+          </div>
+          <div class="mt-3 pt-3 divider-dashed flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-700" data-i18n="tuition.table.th_2months_upfront">2 месяца вперёд (экономия 10,000 KZT)</span>
+            <span class="font-black text-emerald-600">134,000 KZT</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Included Mock Tests & Learning Materials -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 break-inside-avoid">
-      
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
       <!-- Inclusions Details -->
-      <div class="md:col-span-2 bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-slate-200 shadow-card">
+      <div class="md:col-span-2 bg-white rounded-3xl p-6 sm:p-7 shadow-card border border-slate-200">
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-xl shadow-inner">
+          <div class="w-10 h-10 bg-accent-50 rounded-xl flex items-center justify-center text-xl shadow-inner flex-shrink-0">
             🎁
           </div>
           <div>
@@ -505,27 +566,27 @@
       </div>
 
       <!-- Advance Payment Discount Banner -->
-      <div class="bg-gradient-to-br from-amber-500 via-orange-500 to-amber-600 rounded-3xl p-7 text-white shadow-lg flex flex-col justify-between relative overflow-hidden">
+      <div class="bg-gradient-to-br from-accent-500 via-orange-500 to-accent-600 rounded-3xl p-7 text-white shadow-soft flex flex-col justify-between relative overflow-hidden">
         <div class="absolute -right-6 -top-6 w-28 h-28 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
         <div>
           <span class="inline-block bg-white/20 backdrop-blur-md text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-3 border border-white/20" data-i18n="tuition.discount_banner.badge">
             💎 Бонус за оплату
           </span>
           <h3 class="text-2xl font-black mb-2" data-i18n="tuition.discount_banner.title">Экономьте 10,000 KZT</h3>
-          <p class="text-amber-50 text-xs sm:text-sm leading-relaxed" data-i18n-html="tuition.discount_banner.desc">
+          <p class="text-accent-50 text-xs sm:text-sm leading-relaxed" data-i18n-html="tuition.discount_banner.desc">
             Оплатите 2 месяца обучения вперёд и получите мгновенную скидку <strong>10,000 KZT</strong> от общей стоимости обучения.
           </p>
         </div>
-        <div class="mt-6 pt-4 border-t border-white/20 text-xs font-semibold text-amber-50 flex items-center justify-between">
+        <div class="mt-6 pt-4 border-t border-white/20 text-xs font-semibold text-accent-50 flex items-center justify-between gap-2">
           <span data-i18n="tuition.discount_banner.savings_label">Экономия при предоплате:</span>
-          <span class="bg-white text-orange-600 font-black px-3 py-1 rounded-lg text-sm shadow">-10,000 KZT</span>
+          <span class="bg-white text-orange-600 font-black px-3 py-1 rounded-lg text-sm shadow whitespace-nowrap">-10,000 KZT</span>
         </div>
       </div>
 
     </div>
 
     <!-- Contact & Enrollment Footer CTA -->
-    <div class="bg-slate-900 text-white rounded-3xl p-8 text-center shadow-xl break-inside-avoid border border-slate-800">
+    <div class="bg-slate-900 text-white rounded-3xl p-8 text-center shadow-soft border border-slate-800">
       <h3 class="text-2xl font-black mb-2" data-i18n="tuition.cta.title">Готовы начать свой путь к английскому?</h3>
       <p class="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto mb-6 leading-relaxed" data-i18n="tuition.cta.desc">
         Запишитесь на диагностический тест, чтобы определить свой стартовый уровень английского и выбрать расписание, которое подходит именно вам.
@@ -542,6 +603,11 @@
     </div>
 
   </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/77081726414?text=Hi%2C+I+have+a+question+about+Kazakhstan+IELTS+classes." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="whatsapp-float w-14 h-14 rounded-full flex items-center justify-center">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
+  </a>
 
   <!-- Interactive Tuition Calculation Script -->
   <script>

@@ -26,10 +26,21 @@
         cta: "Присоединиться",
         badge_ielts: "Подготовка к IELTS",
         badge_general: "Общий английский",
-        badge_teacher: "Опытный преподаватель",
+        badge_teacher: "Носитель языка",
         badge_free_title: "Бесплатная практика",
         badge_free_sub: "Включено в стоимость",
         badge_hours: "Гибкий график"
+      },
+      key_facts: {
+        eyebrow: "Важно знать перед началом",
+        online_title: "100% Онлайн",
+        online_desc: "Все занятия проходят онлайн — учитесь из любой точки Казахстана.",
+        level_title: "От уровня A2",
+        level_desc: "Курс подходит студентам с уровнем английского A2 и выше.",
+        native_title: "Носитель языка",
+        native_desc: "Все занятия ведёт преподаватель — носитель английского языка.",
+        location_title: "Школа в Алматы",
+        location_desc: "Локальная онлайн-школа из Алматы с преподавателем из Новой Зеландии."
       },
       strip: {
         text: "Не знаете свой уровень? Каждый тарифный план включает бесплатные пробные экзамены по чтению и аудированию.",
@@ -86,7 +97,7 @@
       about: {
         title1: "Что такое",
         title2: "Kazakhstan IELTS?",
-        desc: "Kazakhstan IELTS — это локальная программа обучения английскому языку и подготовки к IELTS, которая сочетает структурированные уроки с личной обратной связью, помогая ученикам достичь свободного владения языком и готовности к экзамену.",
+        desc: "Kazakhstan IELTS — это локальная онлайн-школа английского языка и подготовки к IELTS из Алматы. Все занятия проходят на 100% онлайн и их ведёт преподаватель — носитель языка из Новой Зеландии, что помогает ученикам достичь свободного владения языком и готовности к экзамену.",
         card1_title: "Смотреть тарифы и цены курсов",
         card1_cta: "Изучить курсы и скидки",
         card2_title: "Читать отзывы студентов",
@@ -292,10 +303,21 @@
         cta: "Қазір қосылу",
         badge_ielts: "IELTS дайындығы",
         badge_general: "Жалпы ағылшын тілі",
-        badge_teacher: "Тәжірибелі мұғалім",
+        badge_teacher: "Ана тілі ағылшын",
         badge_free_title: "Тегін практика",
         badge_free_sub: "Оқу ақысына кіреді",
         badge_hours: "Икемді кесте"
+      },
+      key_facts: {
+        eyebrow: "Бастамас бұрын білу маңызды",
+        online_title: "100% Онлайн",
+        online_desc: "Барлық сабақтар онлайн өтеді — Қазақстанның кез келген жерінен оқи аласыз.",
+        level_title: "A2 деңгейінен бастап",
+        level_desc: "Курс ағылшын тілі деңгейі A2 және одан жоғары студенттерге арналған.",
+        native_title: "Ана тілі ағылшын",
+        native_desc: "Барлық сабақтарды ана тілі ағылшын тілі болатын мұғалім жүргізеді.",
+        location_title: "Мектеп Алматыда",
+        location_desc: "Жаңа Зеландиядан келген мұғалімі бар Алматыдағы жергілікті онлайн мектеп."
       },
       strip: {
         text: "Деңгейіңізді білмейсіз бе? Әрбір оқу жоспарына оқу және тыңдалым бойынша тегін сынақ емтихандары кіреді.",
@@ -352,7 +374,7 @@
       about: {
         title1: "Kazakhstan IELTS",
         title2: "дегеніміз не?",
-        desc: "Kazakhstan IELTS — ағылшын тілі мен IELTS-ке дайындықтың жергілікті бағдарламасы, ол құрылымдалған сабақтарды жеке кері байланыспен ұштастырып, оқушыларға еркін сөйлеу мен емтиханға дайын болуға көмектеседі.",
+        desc: "Kazakhstan IELTS — Алматы қаласындағы жергілікті онлайн ағылшын тілі және IELTS-ке дайындық мектебі. Барлық сабақтар 100% онлайн өтеді және оларды Жаңа Зеландиядан келген, ана тілі ағылшын тілі болып табылатын мұғалім жүргізеді, бұл оқушыларға еркін сөйлеу мен емтиханға дайын болуға көмектеседі.",
         card1_title: "Оқу ақысы мен курс бағасын көру",
         card1_cta: "Курстар мен жеңілдіктерді қарау",
         card2_title: "Студент пікірлерін оқу",
@@ -558,10 +580,21 @@
         cta: "Join now",
         badge_ielts: "IELTS Prep",
         badge_general: "General English",
-        badge_teacher: "Experienced Teacher",
+        badge_teacher: "Native Speaker",
         badge_free_title: "Free Practice",
         badge_free_sub: "Included with tuition",
         badge_hours: "Flexible Hours"
+      },
+      key_facts: {
+        eyebrow: "Good to know before you start",
+        online_title: "100% Online",
+        online_desc: "All classes are held online — learn from anywhere in Kazakhstan.",
+        level_title: "A2 Level & Up",
+        level_desc: "This course is designed for students with at least an A2 English level.",
+        native_title: "Native Speaker",
+        native_desc: "Every class is taught by a native English-speaking teacher.",
+        location_title: "Based in Almaty",
+        location_desc: "A local online school from Almaty with a teacher from New Zealand."
       },
       strip: {
         text: "Not sure where you stand? Every tuition plan includes free Reading & Listening practice exams.",
@@ -618,7 +651,7 @@
       about: {
         title1: "What is",
         title2: "Kazakhstan IELTS?",
-        desc: "Kazakhstan IELTS is a local English and IELTS coaching program combining structured lessons with direct, personal feedback to help learners achieve fluency and test readiness.",
+        desc: "Kazakhstan IELTS is a local online English and IELTS school based in Almaty. All classes are 100% online and taught by a native English-speaking teacher from New Zealand, helping learners achieve fluency and test readiness.",
         card1_title: "View Tuition & Course Rates",
         card1_cta: "Explore Courses & Discounts",
         card2_title: "Read Student Reviews",
