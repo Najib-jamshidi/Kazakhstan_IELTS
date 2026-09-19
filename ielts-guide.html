@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Гид по экзамену IELTS | Kazakhstan IELTS</title>
+  <meta name="description" content="Полное руководство по экзамену IELTS: формат Academic и General Training, четыре секции экзамена и система оценки по шкале 1–9." />
+  <link rel="icon" type="image/png" href="img/Logo.png" />
+
+  <!-- Tailwind CSS (JIT via CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+              400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8',
+              800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
+            },
+            accent: {
+              50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 400: '#fbbf24',
+              500: '#f59e0b', 600: '#d97706', 700: '#b45309'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 40px -12px rgba(30, 58, 138, 0.18)',
+            card: '0 8px 30px -10px rgba(15, 23, 42, 0.10)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- AOS Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="css/skilline.css" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Translations (RU / KK / EN) -->
+  <script src="js/i18n.js"></script>
+</head>
+
+<body class="antialiased font-sans text-slate-700 bg-slate-50" id="top" data-i18n-title="ielts_guide.meta_title" data-i18n-desc="ielts_guide.meta_desc">
+
+  <!-- Navigation Header -->
+  <header x-data="{ open: false, coursesOpen: false, langOpen: false }" class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <div class="flex flex-col max-w-screen-xl px-4 sm:px-8 mx-auto md:items-center md:justify-between md:flex-row">
+      <div class="flex flex-row items-center justify-between py-4 w-full md:w-auto">
+        <a href="index.html" class="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg">
+          <img src="img/Logo.png" alt="Kazakhstan IELTS" class="w-10 h-10 rounded-xl object-cover shadow-soft flex-shrink-0" />
+          <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900">Kazakhstan IELTS</span>
+        </a>
+        <button aria-label="Toggle Navigation Menu" class="rounded-lg md:hidden text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" @click="open = !open">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav :class="{ 'flex': open, 'hidden': !open }" class="hidden md:flex md:flex-row flex-col flex-grow md:items-center pb-4 md:pb-0 md:justify-end gap-0.5 md:gap-1 transition duration-300">
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html" data-i18n="nav.home">Главная</a>
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#about" data-i18n="nav.about">О нас</a>
+
+        <div class="relative" @mouseenter="coursesOpen = true" @mouseleave="coursesOpen = false">
+          <button @click="coursesOpen = !coursesOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+            <span data-i18n="nav.courses">Курсы</span>
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </button>
+          <div x-show="coursesOpen" x-cloak :class="{ 'dropdown-open': coursesOpen }" class="dropdown-panel md:absolute md:top-full md:left-0 md:w-64 md:pt-2">
+            <div class="md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2">
+              <a href="general-english.html" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_general">Общий английский</a>
+              <a href="ielts-guide.html" class="block px-4 py-2.5 text-sm rounded-xl font-semibold text-brand-700 bg-brand-50" data-i18n="nav.courses_ielts">Подготовка к IELTS</a>
+              <a href="Kazakhstan_IELTS_course_tuition.html" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_pricing">Полные тарифы и калькулятор</a>
+            </div>
+          </div>
+        </div>
+
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="videos.html" data-i18n="nav.videos">Видео</a>
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a>
+
+        <div class="relative md:ml-1" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
+          <button @click="langOpen = !langOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1.5 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+            <span>🌐</span>
+            <span data-lang-label>RU</span>
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </button>
+          <div x-show="langOpen" x-cloak :class="{ 'dropdown-open': langOpen }" class="dropdown-panel md:absolute md:top-full md:right-0 md:w-40 md:pt-2">
+            <div class="md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2">
+              <button type="button" data-lang-option="ru" @click="i18n.apply('ru'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Русский</button>
+              <button type="button" data-lang-option="kk" @click="i18n.apply('kk'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Қазақша</button>
+              <button type="button" data-lang-option="en" @click="i18n.apply('en'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">English</button>
+            </div>
+          </div>
+        </div>
+
+        <a class="mt-2 md:mt-0 md:ml-3 inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm text-center text-white rounded-full shadow-soft hover:opacity-90 transition bg-[#25d366]" href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
+          <span data-i18n="nav.whatsapp">Написать в WhatsApp</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-mesh">
+    <div class="max-w-screen-lg px-4 sm:px-8 mx-auto relative py-14 sm:py-20 text-center">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-4" data-i18n="ielts_guide.hero_eyebrow">Гид по экзамену</span>
+      <h1 class="text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold leading-[1.1] tracking-tight">
+        <span class="block text-slate-900" data-i18n="ielts_guide.hero_title1">Полное руководство</span>
+        <span class="block bg-clip-text text-transparent bg-gradient-to-r from-brand-700 via-brand-600 to-accent-600" data-i18n="ielts_guide.hero_title2">по экзамену IELTS</span>
+      </h1>
+      <p class="text-slate-500 mt-6 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" data-i18n="ielts_guide.hero_subtitle">
+        Разбираемся, что такое IELTS, чем отличаются форматы Academic и General Training, из чего состоит экзамен и как формируется итоговый балл от 1 до 9.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center gap-3 justify-center">
+        <a href="https://wa.me/77081726414?text=Hi%2C+I+would+like+to+book+an+IELTS+prep+course." target="_blank" rel="noopener" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 pl-6 pr-2.5 py-2.5 rounded-full text-white font-semibold shadow-soft hover:opacity-90 transition bg-[#25d366]">
+          <span data-i18n="ielts_guide.hero_cta_primary">Записаться на подготовку</span>
+          <span class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </span>
+        </a>
+        <a href="Kazakhstan_IELTS_course_tuition.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-brand-700 bg-white border border-slate-200 shadow-sm hover:border-brand-300 hover:bg-brand-50 transition" data-i18n="ielts_guide.hero_cta_secondary">Смотреть тарифы</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container px-4 lg:px-8 mx-auto max-w-screen-xl overflow-x-hidden">
+
+    <!-- What is IELTS -->
+    <section class="mt-4 sm:mt-8">
+      <div class="grid lg:grid-cols-5 gap-8 items-center">
+        <div data-aos="fade-up" class="lg:col-span-3 bg-white rounded-3xl shadow-card border border-slate-100 p-7 sm:p-10">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-3" data-i18n="ielts_guide.what_eyebrow">Что такое IELTS</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight" data-i18n="ielts_guide.what_title">Международный экзамен по английскому языку</h2>
+          <p class="text-slate-500 mt-4 leading-relaxed" data-i18n="ielts_guide.what_desc">
+            IELTS (International English Language Testing System) — это международный стандартизированный экзамен, который проверяет уровень владения английским языком по четырём навыкам: аудирование, чтение, письмо и говорение. Результаты IELTS принимают более 12 000 организаций по всему миру — университеты, работодатели, иммиграционные службы и профессиональные ассоциации.
+          </p>
+
+          <div class="grid sm:grid-cols-3 gap-4 mt-7">
+            <div class="flex flex-col gap-2">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">🌍</div>
+              <p class="font-bold text-slate-900 text-sm" data-i18n="ielts_guide.what_point1_title">Признан во всём мире</p>
+              <p class="text-xs text-slate-500 leading-snug" data-i18n="ielts_guide.what_point1_desc">Принимается университетами, работодателями и иммиграционными службами в Великобритании, Канаде, Австралии, США и других странах.</p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-lg">🧭</div>
+              <p class="font-bold text-slate-900 text-sm" data-i18n="ielts_guide.what_point2_title">Два формата</p>
+              <p class="text-xs text-slate-500 leading-snug" data-i18n="ielts_guide.what_point2_desc">Academic — для поступления в университет, General Training — для иммиграции, работы или обучения в колледже.</p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <div class="w-10 h-10 rounded-xl bg-accent-50 text-accent-600 flex items-center justify-center text-lg">📊</div>
+              <p class="font-bold text-slate-900 text-sm" data-i18n="ielts_guide.what_point3_title">Шкала от 1 до 9</p>
+              <p class="text-xs text-slate-500 leading-snug" data-i18n="ielts_guide.what_point3_desc">Итоговый балл — это среднее по четырём секциям, округлённое до ближайшей половины балла.</p>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="150" class="lg:col-span-2">
+          <!-- IMAGE PLACEHOLDER — replace with a real photo.
+               Suggested file: img/ielts-guide/classroom.jpg
+               <img src="img/ielts-guide/classroom.jpg" alt="Kazakhstan IELTS students taking part in a live online class" class="w-full h-full object-cover" />
+          -->
+          <div class="aspect-square rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-3 text-slate-400 p-6 text-center shadow-card">
+            <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 16.5V4.5A1.5 1.5 0 014.5 3h15A1.5 1.5 0 0121 4.5v15a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 19.5v-3zm10.5-9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" /></svg>
+            <span class="text-xs font-medium" data-i18n="ielts_guide.img_classroom_caption">Фото: момент живого занятия</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic vs General Training -->
+    <section class="mt-24">
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold text-slate-900 leading-tight">
+          <span data-i18n="ielts_guide.format_title1">Academic</span> <span class="text-accent-600" data-i18n="ielts_guide.format_title2">или</span> <span data-i18n="ielts_guide.format_title3">General Training?</span>
+        </h2>
+        <p class="text-slate-500 leading-relaxed mt-3" data-i18n="ielts_guide.format_desc">
+          Форматы Listening и Speaking одинаковы для обоих вариантов экзамена. Различия — в заданиях по Reading и Writing.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 sm:gap-8 mt-12">
+        <div data-aos="fade-up" class="bg-white shadow-card border border-slate-100 rounded-2xl overflow-hidden">
+          <div class="h-1.5 bg-gradient-to-r from-brand-500 to-brand-700"></div>
+          <div class="p-7 sm:p-8">
+            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-brand-50 text-brand-700" data-i18n="ielts_guide.academic_tag">Для учёбы</span>
+            <h3 class="text-2xl font-bold text-slate-800 mt-3" data-i18n="ielts_guide.academic_title">IELTS Academic</h3>
+            <p class="text-slate-500 text-sm mt-3 leading-relaxed" data-i18n="ielts_guide.academic_desc">Подходит для поступления в университеты и колледжи, где обучение ведётся на английском языке, а также для регистрации в профессиональных организациях.</p>
+            <ul class="mt-5 space-y-2.5 text-sm text-slate-600">
+              <li class="flex items-start gap-2.5"><span class="text-brand-500 font-bold mt-0.5">✓</span><span data-i18n="ielts_guide.academic_li1">Тексты для чтения — из академических журналов, книг и научных статей</span></li>
+              <li class="flex items-start gap-2.5"><span class="text-brand-500 font-bold mt-0.5">✓</span><span data-i18n="ielts_guide.academic_li2">Writing Task 1 — описание графика, диаграммы, таблицы или процесса</span></li>
+              <li class="flex items-start gap-2.5"><span class="text-brand-500 font-bold mt-0.5">✓</span><span data-i18n="ielts_guide.academic_li3">Подходит для: поступления в вуз, магистратуры, PhD</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-card border border-slate-100 rounded-2xl overflow-hidden">
+          <div class="h-1.5 bg-gradient-to-r from-indigo-500 to-accent-600"></div>
+          <div class="p-7 sm:p-8">
+            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-indigo-50 text-indigo-700" data-i18n="ielts_guide.general_tag">Для жизни и работы</span>
+            <h3 class="text-2xl font-bold text-slate-800 mt-3" data-i18n="ielts_guide.general_title">IELTS General Training</h3>
+            <p class="text-slate-500 text-sm mt-3 leading-relaxed" data-i18n="ielts_guide.general_desc">Подходит для иммиграции в Австралию, Канаду, Великобританию и Новую Зеландию, для получения рабочей визы или обучения в колледже ниже уровня университета.</p>
+            <ul class="mt-5 space-y-2.5 text-sm text-slate-600">
+              <li class="flex items-start gap-2.5"><span class="text-indigo-500 font-bold mt-0.5">✓</span><span data-i18n="ielts_guide.general_li1">Тексты для чтения — из объявлений, рекламы, инструкций и материалов на рабочую тематику</span></li>
+              <li class="flex items-start gap-2.5"><span class="text-indigo-500 font-bold mt-0.5">✓</span><span data-i18n="ielts_guide.general_li2">Writing Task 1 — деловое или личное письмо</span></li>
+              <li class="flex items-start gap-2.5"><span class="text-indigo-500 font-bold mt-0.5">✓</span><span data-i18n="ielts_guide.general_li3">Подходит для: иммиграции, работы, среднего профессионального образования</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" class="mt-8">
+        <!-- IMAGE PLACEHOLDER — replace with a real infographic comparing Academic vs General Training.
+             Suggested file: img/ielts-guide/academic-vs-general.jpg
+             <img src="img/ielts-guide/academic-vs-general.jpg" alt="Comparison infographic: IELTS Academic vs General Training" class="w-full h-full object-cover" />
+        -->
+        <div class="aspect-[21/9] rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-3 text-slate-400 p-6 text-center">
+          <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+          <span class="text-xs font-medium" data-i18n="ielts_guide.img_comparison_caption">Инфографика: Academic vs General Training</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Sections -->
+    <section class="mt-24">
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold text-slate-900"><span data-i18n="ielts_guide.sections_title1">4 секции</span> <span class="text-accent-600" data-i18n="ielts_guide.sections_title2">экзамена IELTS</span></h2>
+        <p class="text-slate-500 leading-relaxed mt-3" data-i18n="ielts_guide.sections_desc">Каждая секция оценивает отдельный языковой навык. Listening и Speaking одинаковы для всех, Reading и Writing отличаются в зависимости от формата.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div data-aos="fade-up" class="bg-white shadow-card border border-slate-100 rounded-2xl p-6 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl">🎧</div>
+            <span class="text-[11px] font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-full" data-i18n="ielts_guide.listening_badge">40 вопросов</span>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900" data-i18n="ielts_guide.listening_title">Listening</h3>
+          <p class="text-xs font-semibold text-slate-400 mt-0.5" data-i18n="ielts_guide.listening_duration">~30 минут + 10 минут на перенос ответов</p>
+          <p class="text-sm text-slate-500 mt-3 leading-relaxed" data-i18n="ielts_guide.listening_desc">4 записи, 40 вопросов. Разговоры и монологи на бытовые и учебные темы — от простого диалога до лекции.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="bg-white shadow-card border border-slate-100 rounded-2xl p-6 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-accent-50 text-accent-600 flex items-center justify-center text-xl">📖</div>
+            <span class="text-[11px] font-bold text-accent-700 bg-accent-50 px-2.5 py-1 rounded-full" data-i18n="ielts_guide.reading_badge">40 вопросов</span>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900" data-i18n="ielts_guide.reading_title">Reading</h3>
+          <p class="text-xs font-semibold text-slate-400 mt-0.5" data-i18n="ielts_guide.reading_duration">60 минут</p>
+          <p class="text-sm text-slate-500 mt-3 leading-relaxed" data-i18n="ielts_guide.reading_desc">3 текста (Academic) или несколько текстов (General Training), 40 вопросов. Проверяет умение находить главную мысль, детали и логические связи.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200" class="bg-white shadow-card border border-slate-100 rounded-2xl p-6 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl">✍️</div>
+            <span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-full" data-i18n="ielts_guide.writing_badge">2 задания</span>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900" data-i18n="ielts_guide.writing_title">Writing</h3>
+          <p class="text-xs font-semibold text-slate-400 mt-0.5" data-i18n="ielts_guide.writing_duration">60 минут</p>
+          <p class="text-sm text-slate-500 mt-3 leading-relaxed" data-i18n="ielts_guide.writing_desc">2 задания: Task 1 (описание данных или письмо, 150 слов) и Task 2 (эссе-рассуждение, 250 слов).</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-card border border-slate-100 rounded-2xl p-6 flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl">🗣️</div>
+            <span class="text-[11px] font-bold text-rose-700 bg-rose-50 px-2.5 py-1 rounded-full" data-i18n="ielts_guide.speaking_badge">3 части</span>
+          </div>
+          <h3 class="font-bold text-lg text-slate-900" data-i18n="ielts_guide.speaking_title">Speaking</h3>
+          <p class="text-xs font-semibold text-slate-400 mt-0.5" data-i18n="ielts_guide.speaking_duration">11–14 минут</p>
+          <p class="text-sm text-slate-500 mt-3 leading-relaxed" data-i18n="ielts_guide.speaking_desc">Личное собеседование с экзаменатором в 3 части: знакомство, монолог по карточке (2 минуты) и обсуждение темы.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Band Score -->
+    <section class="mt-24 mb-24">
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold text-slate-900"><span data-i18n="ielts_guide.band_title1">Шкала оценки</span> <span class="text-accent-600" data-i18n="ielts_guide.band_title2">от 1 до 9</span></h2>
+        <p class="text-slate-500 leading-relaxed mt-3" data-i18n="ielts_guide.band_desc">Итоговый балл IELTS — это среднее арифметическое баллов за все четыре секции, округлённое до ближайшего 0.5 или целого числа. Вот что означают основные баллы:</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mt-12">
+        <div data-aos="fade-up" class="bg-gradient-to-br from-brand-900 to-brand-700 text-white rounded-2xl p-5 shadow-soft">
+          <p class="text-2xl font-black" data-i18n="ielts_guide.band9_label">9.0</p>
+          <p class="font-bold text-sm mt-1" data-i18n="ielts_guide.band9_title">Эксперт</p>
+          <p class="text-xs text-brand-100/80 mt-2 leading-snug" data-i18n="ielts_guide.band9_desc">Полностью свободное владение языком, точное и уместное использование.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="80" class="bg-white border border-slate-100 shadow-card rounded-2xl p-5">
+          <p class="text-2xl font-black text-brand-700" data-i18n="ielts_guide.band8_label">8.0</p>
+          <p class="font-bold text-sm mt-1 text-slate-900" data-i18n="ielts_guide.band8_title">Очень хорошо</p>
+          <p class="text-xs text-slate-500 mt-2 leading-snug" data-i18n="ielts_guide.band8_desc">Свободное владение с редкими неточностями в непривычных ситуациях.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="160" class="bg-white border border-slate-100 shadow-card rounded-2xl p-5">
+          <p class="text-2xl font-black text-brand-700" data-i18n="ielts_guide.band7_label">7.0</p>
+          <p class="font-bold text-sm mt-1 text-slate-900" data-i18n="ielts_guide.band7_title">Хорошо</p>
+          <p class="text-xs text-slate-500 mt-2 leading-snug" data-i18n="ielts_guide.band7_desc">Уверенное владение языком с отдельными неточностями и недопониманием.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="240" class="bg-white border border-slate-100 shadow-card rounded-2xl p-5">
+          <p class="text-2xl font-black text-slate-500" data-i18n="ielts_guide.band6_label">6.0</p>
+          <p class="font-bold text-sm mt-1 text-slate-900" data-i18n="ielts_guide.band6_title">Достаточно</p>
+          <p class="text-xs text-slate-500 mt-2 leading-snug" data-i18n="ielts_guide.band6_desc">В целом эффективное владение языком, несмотря на неточности.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="320" class="bg-white border border-slate-100 shadow-card rounded-2xl p-5 col-span-2 sm:col-span-1">
+          <p class="text-2xl font-black text-slate-400" data-i18n="ielts_guide.band5_label">5.0</p>
+          <p class="font-bold text-sm mt-1 text-slate-900" data-i18n="ielts_guide.band5_title">Средне</p>
+          <p class="text-xs text-slate-500 mt-2 leading-snug" data-i18n="ielts_guide.band5_desc">Частичное владение языком, справляется с общим смыслом в большинстве ситуаций.</p>
+        </div>
+      </div>
+
+      <p class="text-center text-xs text-slate-400 mt-6 max-w-xl mx-auto leading-relaxed" data-i18n="ielts_guide.band_note">Полная шкала включает баллы от 1 (не владеет языком) до 9 (эксперт). Большинство университетов и иммиграционных программ требуют балл от 5.5 до 7.5.</p>
+
+      <div data-aos="fade-up" class="mt-8">
+        <!-- IMAGE PLACEHOLDER — replace with a real IELTS band score chart graphic.
+             Suggested file: img/ielts-guide/band-score-chart.jpg
+             <img src="img/ielts-guide/band-score-chart.jpg" alt="IELTS band score chart from 1 to 9" class="w-full h-full object-cover" />
+        -->
+        <div class="aspect-[21/9] rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-3 text-slate-400 p-6 text-center">
+          <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+          <span class="text-xs font-medium" data-i18n="ielts_guide.img_bandchart_caption">Инфографика: таблица баллов IELTS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mb-24">
+      <div data-aos="fade-up" class="bg-slate-900 bg-mesh-dark text-white rounded-3xl p-8 sm:p-10 text-center shadow-soft border border-slate-800">
+        <h3 class="text-2xl font-black mb-2" data-i18n="ielts_guide.cta_title">Готовы начать подготовку к IELTS?</h3>
+        <p class="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto mb-6 leading-relaxed" data-i18n="ielts_guide.cta_desc">Запишитесь на бесплатную консультацию, чтобы определить свой текущий уровень и подобрать программу подготовки под ваш целевой балл.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div class="inline-flex flex-wrap items-center justify-center gap-4 bg-slate-800 px-6 py-3.5 rounded-2xl border border-slate-700 shadow-inner">
+            <div class="flex items-center gap-2 text-slate-300 text-xs font-bold uppercase tracking-wider" data-i18n="ielts_guide.cta_contact_label">📲 Напишите нам:</div>
+            <a href="https://wa.me/77081726414" target="_blank" rel="noopener" class="text-base font-black text-brand-300 hover:text-white transition-colors">+7 708 172 6414 / WhatsApp</a>
+          </div>
+          <a href="Kazakhstan_IELTS_course_tuition.html" class="text-sm font-semibold text-brand-300 hover:text-white hover:underline" data-i18n="ielts_guide.cta_secondary">Смотреть тарифы и калькулятор</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-8 pt-14 pb-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <img src="img/Logo.png" alt="Kazakhstan IELTS" class="w-10 h-10 rounded-xl object-cover flex-shrink-0" />
+            <h2 class="font-bold text-lg">Kazakhstan IELTS</h2>
+          </div>
+          <p class="text-sm text-slate-400 mt-4 leading-relaxed" data-i18n="footer.tagline">Онлайн-обучение английскому и подготовка к IELTS для учеников по всему Казахстану.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-slate-300 mb-4" data-i18n="footer.students_title">Студентам</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
+            <li><a href="Kazakhstan_IELTS_course_tuition.html" class="hover:text-white transition" data-i18n="footer.students_tuition">Тарифы и цены</a></li>
+            <li><a href="Kazakhstan_IELTS_course_tuition.html" class="hover:text-white transition" data-i18n="footer.students_materials">Бесплатные материалы</a></li>
+            <li><a href="ielts-guide.html" class="hover:text-white transition" data-i18n="footer.students_ielts_guide">Гид по экзамену IELTS</a></li>
+            <li><a href="videos.html" class="hover:text-white transition" data-i18n="footer.students_videos">Видео с занятий</a></li>
+            <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.students_reviews">Отзывы студентов</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-slate-300 mb-4" data-i18n="footer.quicklinks_title">Быстрые ссылки</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
+            <li><a href="index.html" class="hover:text-white transition" data-i18n="footer.quicklinks_home">Главная</a></li>
+            <li><a href="index.html#about" class="hover:text-white transition" data-i18n="footer.quicklinks_about">О нас</a></li>
+            <li><a href="index.html#courses" class="hover:text-white transition" data-i18n="footer.quicklinks_courses">Курсы</a></li>
+            <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.quicklinks_reviews">Отзывы</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-slate-300 mb-4" data-i18n="footer.contact_title">Контакты</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li>
+              <a href="https://wa.me/77081726414?text=Hi%2C+I+have+a+question+about+Kazakhstan+IELTS." target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white transition">
+                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
+                <span>WhatsApp: +7 708 172 6414</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/Kazakhstan_ielts" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white transition">
+                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                <span data-i18n="footer.contact_instagram">Instagram: @Kazakhstan_ielts</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between flex-wrap gap-2 text-xs text-slate-500 mt-10 border-t border-slate-800 pt-5">
+        <p data-i18n="footer.copyright">&copy; 2025 Kazakhstan IELTS. Все права защищены.</p>
+        <a href="#top" class="hover:text-white transition" data-i18n="footer.backtotop">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/77081726414?text=Hi%2C+I+have+a+question+about+Kazakhstan+IELTS+classes." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="whatsapp-float w-14 h-14 rounded-full flex items-center justify-center">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
+  </a>
+
+  <!-- AOS Library Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+    });
+  </script>
+</body>
+
+</html>

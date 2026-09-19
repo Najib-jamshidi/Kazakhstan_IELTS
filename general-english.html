@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Программа общего английского | Kazakhstan IELTS</title>
+  <meta name="description" content="Программа общего английского от A2 до C2 с учебниками English File, структурированными домашними заданиями и гарантированным прогрессом." />
+  <link rel="icon" type="image/png" href="img/Logo.png" />
+
+  <!-- Tailwind CSS (JIT via CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+              400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8',
+              800: '#1e40af', 900: '#1e3a8a', 950: '#172554'
+            },
+            accent: {
+              50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 400: '#fbbf24',
+              500: '#f59e0b', 600: '#d97706', 700: '#b45309'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 40px -12px rgba(30, 58, 138, 0.18)',
+            card: '0 8px 30px -10px rgba(15, 23, 42, 0.10)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- AOS Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="css/skilline.css" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Translations (RU / KK / EN) -->
+  <script src="js/i18n.js"></script>
+</head>
+
+<body class="antialiased font-sans text-slate-700 bg-slate-50" id="top" data-i18n-title="ge_program.meta_title" data-i18n-desc="ge_program.meta_desc">
+
+  <!-- Navigation Header -->
+  <header x-data="{ open: false, coursesOpen: false, langOpen: false }" class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+    <div class="flex flex-col max-w-screen-xl px-4 sm:px-8 mx-auto md:items-center md:justify-between md:flex-row">
+      <div class="flex flex-row items-center justify-between py-4 w-full md:w-auto">
+        <a href="index.html" class="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg">
+          <img src="img/Logo.png" alt="Kazakhstan IELTS" class="w-10 h-10 rounded-xl object-cover shadow-soft flex-shrink-0" />
+          <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900">Kazakhstan IELTS</span>
+        </a>
+        <button aria-label="Toggle Navigation Menu" class="rounded-lg md:hidden text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" @click="open = !open">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav :class="{ 'flex': open, 'hidden': !open }" class="hidden md:flex md:flex-row flex-col flex-grow md:items-center pb-4 md:pb-0 md:justify-end gap-0.5 md:gap-1 transition duration-300">
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html" data-i18n="nav.home">Главная</a>
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#about" data-i18n="nav.about">О нас</a>
+
+        <div class="relative" @mouseenter="coursesOpen = true" @mouseleave="coursesOpen = false">
+          <button @click="coursesOpen = !coursesOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+            <span data-i18n="nav.courses">Курсы</span>
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </button>
+          <div x-show="coursesOpen" x-cloak :class="{ 'dropdown-open': coursesOpen }" class="dropdown-panel md:absolute md:top-full md:left-0 md:w-64 md:pt-2">
+            <div class="md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2">
+              <a href="general-english.html" class="block px-4 py-2.5 text-sm rounded-xl font-semibold text-brand-700 bg-brand-50" data-i18n="nav.courses_general">Общий английский</a>
+              <a href="ielts-guide.html" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_ielts">Подготовка к IELTS</a>
+              <a href="Kazakhstan_IELTS_course_tuition.html" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_pricing">Полные тарифы и калькулятор</a>
+            </div>
+          </div>
+        </div>
+
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="videos.html" data-i18n="nav.videos">Видео</a>
+        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a>
+
+        <div class="relative md:ml-1" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
+          <button @click="langOpen = !langOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1.5 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
+            <span>🌐</span>
+            <span data-lang-label>RU</span>
+            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </button>
+          <div x-show="langOpen" x-cloak :class="{ 'dropdown-open': langOpen }" class="dropdown-panel md:absolute md:top-full md:right-0 md:w-40 md:pt-2">
+            <div class="md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2">
+              <button type="button" data-lang-option="ru" @click="i18n.apply('ru'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Русский</button>
+              <button type="button" data-lang-option="kk" @click="i18n.apply('kk'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Қазақша</button>
+              <button type="button" data-lang-option="en" @click="i18n.apply('en'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">English</button>
+            </div>
+          </div>
+        </div>
+
+        <a class="mt-2 md:mt-0 md:ml-3 inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm text-center text-white rounded-full shadow-soft hover:opacity-90 transition bg-[#25d366]" href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
+          <span data-i18n="nav.whatsapp">Написать в WhatsApp</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-mesh">
+    <div class="max-w-screen-lg px-4 sm:px-8 mx-auto relative py-14 sm:py-20 text-center">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-4" data-i18n="ge_program.hero_eyebrow">Общий английский</span>
+      <h1 class="text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold leading-[1.1] tracking-tight">
+        <span class="block text-slate-900" data-i18n="ge_program.hero_title1">От базового уровня</span>
+        <span class="block bg-clip-text text-transparent bg-gradient-to-r from-brand-700 via-brand-600 to-accent-600" data-i18n="ge_program.hero_title2">до свободного владения</span>
+      </h1>
+      <p class="text-slate-500 mt-6 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" data-i18n="ge_program.hero_subtitle">
+        Наша программа общего английского проведёт вас от уровня A2 (Pre-Intermediate) до C2 (Proficiency) по чёткой, проверенной методике — с учебниками English File и структурированной домашней практикой.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Facts bar (reused from homepage) -->
+  <section class="bg-white border-y border-slate-100">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-8 py-8">
+      <p class="text-center text-xs font-bold uppercase tracking-wider text-brand-600 mb-5" data-i18n="key_facts.eyebrow">Важно знать перед началом</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div data-aos="fade-up" class="flex items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl flex-shrink-0">💻</div>
+          <div>
+            <p class="font-bold text-slate-900 text-sm" data-i18n="key_facts.online_title">100% Онлайн</p>
+            <p class="text-xs text-slate-500 mt-0.5 leading-snug" data-i18n="key_facts.online_desc">Все занятия проходят онлайн — учитесь из любой точки Казахстана.</p>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100" class="flex items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-xl flex-shrink-0">📈</div>
+          <div>
+            <p class="font-bold text-slate-900 text-sm" data-i18n="key_facts.level_title">От уровня A2</p>
+            <p class="text-xs text-slate-500 mt-0.5 leading-snug" data-i18n="key_facts.level_desc">Курс подходит студентам с уровнем английского A2 и выше.</p>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200" class="flex items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl flex-shrink-0">🎓</div>
+          <div>
+            <p class="font-bold text-slate-900 text-sm" data-i18n="key_facts.native_title">Носитель языка</p>
+            <p class="text-xs text-slate-500 mt-0.5 leading-snug" data-i18n="key_facts.native_desc">Все занятия ведёт преподаватель — носитель английского языка.</p>
+          </div>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300" class="flex items-start gap-3">
+          <div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl flex-shrink-0">📍</div>
+          <div>
+            <p class="font-bold text-slate-900 text-sm" data-i18n="key_facts.location_title">Школа в Алматы</p>
+            <p class="text-xs text-slate-500 mt-0.5 leading-snug" data-i18n="key_facts.location_desc">Локальная онлайн-школа из Алматы с преподавателем из Новой Зеландии.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container px-4 lg:px-8 mx-auto max-w-screen-xl overflow-x-hidden">
+
+    <!-- CEFR Roadmap -->
+    <section class="mt-20">
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold text-slate-900"><span data-i18n="ge_program.roadmap_title1">Дорожная карта</span> <span class="text-accent-600" data-i18n="ge_program.roadmap_title2">уровней</span></h2>
+        <p class="text-slate-500 leading-relaxed mt-3" data-i18n="ge_program.roadmap_desc">Каждый уровень строится на предыдущем и заканчивается понятным результатом — тем, что вы реально сможете делать на английском.</p>
+      </div>
+
+      <div class="relative mt-14">
+        <!-- connector line (desktop) -->
+        <div class="hidden lg:block absolute top-6 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-brand-200 via-brand-400 to-accent-400"></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4 relative">
+          <div data-aos="fade-up" class="flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-brand-600 text-white font-black flex items-center justify-center shadow-soft ring-4 ring-white z-10" data-i18n="ge_program.level_a2_code">A2</div>
+            <div class="bg-white border border-slate-100 shadow-card rounded-2xl p-5 mt-4 w-full">
+              <p class="font-bold text-slate-900 text-sm" data-i18n="ge_program.level_a2_title">Pre-Intermediate</p>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="ge_program.level_a2_desc">Уверенно говорите на бытовые темы: семья, покупки, работа, путешествия. Понимаете простые тексты и объявления.</p>
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-brand-600 text-white font-black flex items-center justify-center shadow-soft ring-4 ring-white z-10" data-i18n="ge_program.level_b1_code">B1</div>
+            <div class="bg-white border border-slate-100 shadow-card rounded-2xl p-5 mt-4 w-full">
+              <p class="font-bold text-slate-900 text-sm" data-i18n="ge_program.level_b1_title">Intermediate</p>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="ge_program.level_b1_desc">Ведёте беседу на большинство повседневных тем, выражаете мнение, понимаете основную идею сложных текстов.</p>
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-indigo-600 text-white font-black flex items-center justify-center shadow-soft ring-4 ring-white z-10" data-i18n="ge_program.level_b2_code">B2</div>
+            <div class="bg-white border border-slate-100 shadow-card rounded-2xl p-5 mt-4 w-full">
+              <p class="font-bold text-slate-900 text-sm" data-i18n="ge_program.level_b2_title">Upper-Intermediate</p>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="ge_program.level_b2_desc">Свободно общаетесь с носителями языка, аргументируете точку зрения, понимаете сложные тексты и быструю речь.</p>
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-indigo-600 text-white font-black flex items-center justify-center shadow-soft ring-4 ring-white z-10" data-i18n="ge_program.level_c1_code">C1</div>
+            <div class="bg-white border border-slate-100 shadow-card rounded-2xl p-5 mt-4 w-full">
+              <p class="font-bold text-slate-900 text-sm" data-i18n="ge_program.level_c1_title">Advanced</p>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="ge_program.level_c1_desc">Гибко и точно используете язык в учёбе, работе и социальных ситуациях, понимаете скрытый смысл и нюансы.</p>
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-accent-600 text-white font-black flex items-center justify-center shadow-soft ring-4 ring-white z-10" data-i18n="ge_program.level_c2_code">C2</div>
+            <div class="bg-white border border-slate-100 shadow-card rounded-2xl p-5 mt-4 w-full">
+              <p class="font-bold text-slate-900 text-sm" data-i18n="ge_program.level_c2_title">Proficiency</p>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="ge_program.level_c2_desc">Понимаете практически всё услышанное и прочитанное, говорите спонтанно и точно, как образованный носитель языка.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- English File Textbooks -->
+    <section class="mt-24">
+      <div class="grid lg:grid-cols-5 gap-8 items-start">
+        <div data-aos="fade-up" class="lg:col-span-2">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-3" data-i18n="ge_program.books_title1">Учимся по</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 leading-tight" data-i18n="ge_program.books_title2">English File</h2>
+          <p class="text-slate-500 mt-4 leading-relaxed" data-i18n="ge_program.books_desc">Мы преподаём по всемирно признанной серии учебников English File (издательство Oxford) — каждый уровень программы соответствует отдельному учебнику с аудиоматериалами, грамматикой и практикой всех 4 навыков.</p>
+          <p class="text-xs text-slate-400 mt-4 italic" data-i18n="ge_program.books_note">Учебник и рабочая тетрадь предоставляются на каждом уровне обучения.</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="150" class="lg:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <!-- IMAGE PLACEHOLDER x5 — replace each with a photo of the matching English File coursebook cover.
+               Suggested files: img/general-english/english-file-a2.jpg ... english-file-c2.jpg
+               <img src="img/general-english/english-file-a2.jpg" alt="English File Pre-Intermediate (A2) coursebook cover" class="w-full h-full object-cover" />
+          -->
+          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+            <span class="text-[11px] font-semibold">A2</span>
+          </div>
+          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+            <span class="text-[11px] font-semibold">B1</span>
+          </div>
+          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+            <span class="text-[11px] font-semibold">B2</span>
+          </div>
+          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+            <span class="text-[11px] font-semibold">C1</span>
+          </div>
+          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+            <span class="text-[11px] font-semibold">C2</span>
+          </div>
+          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
+            <span class="text-xs font-medium" data-i18n="ge_program.img_books_caption">Фото: учебники English File</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Homework Methodology -->
+    <section class="mt-24 mb-24">
+      <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
+        <h2 class="text-3xl font-extrabold text-slate-900"><span data-i18n="ge_program.methodology_title1">Домашние задания,</span> <span class="text-accent-600" data-i18n="ge_program.methodology_title2">которые работают</span></h2>
+        <p class="text-slate-500 leading-relaxed mt-3" data-i18n="ge_program.methodology_desc">Прогресс в языке требует практики между занятиями. Поэтому в каждую программу включена структурированная система домашних заданий.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 sm:gap-8 mt-12">
+        <div data-aos="fade-up" class="bg-white shadow-card border border-slate-100 p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl">📝</div>
+          <h3 class="font-bold text-lg mt-4 text-slate-800" data-i18n="ge_program.method_card1_title">Структурированные задания</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed" data-i18n="ge_program.method_card1_desc">После каждого занятия вы получаете чёткое домашнее задание по грамматике, лексике и письму — точно под пройденную тему.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-card border border-slate-100 p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl">🔍</div>
+          <h3 class="font-bold text-lg mt-4 text-slate-800" data-i18n="ge_program.method_card2_title">Разбор и обратная связь</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed" data-i18n="ge_program.method_card2_desc">Преподаватель проверяет домашние задания и разбирает ошибки на следующем занятии, чтобы закрепить материал.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-card border border-slate-100 p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-2xl bg-accent-50 text-accent-600 flex items-center justify-center text-2xl">📈</div>
+          <h3 class="font-bold text-lg mt-4 text-slate-800" data-i18n="ge_program.method_card3_title">Гарантированный прогресс</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed" data-i18n="ge_program.method_card3_desc">Регулярная практика в классе и дома — это то, что действительно гарантирует стабильный рост от уровня к уровню.</p>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" class="mt-8">
+        <!-- IMAGE PLACEHOLDER — replace with a real photo of a General English lesson.
+             Suggested file: img/general-english/classroom.jpg
+             <img src="img/general-english/classroom.jpg" alt="Kazakhstan IELTS General English lesson in progress" class="w-full h-full object-cover" />
+        -->
+        <div class="aspect-[21/9] rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-3 text-slate-400 p-6 text-center">
+          <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 16.5V4.5A1.5 1.5 0 014.5 3h15A1.5 1.5 0 0121 4.5v15a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 19.5v-3zm10.5-9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" /></svg>
+          <span class="text-xs font-medium" data-i18n="ge_program.img_classroom_caption">Фото: момент занятия по общему английскому</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mb-24">
+      <div data-aos="fade-up" class="bg-slate-900 bg-mesh-dark text-white rounded-3xl p-8 sm:p-10 text-center shadow-soft border border-slate-800">
+        <h3 class="text-2xl font-black mb-2" data-i18n="ge_program.cta_title">Готовы начать путь к свободному английскому?</h3>
+        <p class="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto mb-6 leading-relaxed" data-i18n="ge_program.cta_desc">Определите свой текущий уровень и начните обучение по программе General English уже на этой неделе.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div class="inline-flex flex-wrap items-center justify-center gap-4 bg-slate-800 px-6 py-3.5 rounded-2xl border border-slate-700 shadow-inner">
+            <div class="flex items-center gap-2 text-slate-300 text-xs font-bold uppercase tracking-wider" data-i18n="ge_program.cta_contact_label">📲 Напишите нам:</div>
+            <a href="https://wa.me/77081726414" target="_blank" rel="noopener" class="text-base font-black text-brand-300 hover:text-white transition-colors">+7 708 172 6414 / WhatsApp</a>
+          </div>
+          <a href="Kazakhstan_IELTS_course_tuition.html" class="text-sm font-semibold text-brand-300 hover:text-white hover:underline" data-i18n="ge_program.cta_secondary">Смотреть тарифы и калькулятор</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-8 pt-14 pb-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <img src="img/Logo.png" alt="Kazakhstan IELTS" class="w-10 h-10 rounded-xl object-cover flex-shrink-0" />
+            <h2 class="font-bold text-lg">Kazakhstan IELTS</h2>
+          </div>
+          <p class="text-sm text-slate-400 mt-4 leading-relaxed" data-i18n="footer.tagline">Онлайн-обучение английскому и подготовка к IELTS для учеников по всему Казахстану.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-slate-300 mb-4" data-i18n="footer.students_title">Студентам</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
+            <li><a href="Kazakhstan_IELTS_course_tuition.html" class="hover:text-white transition" data-i18n="footer.students_tuition">Тарифы и цены</a></li>
+            <li><a href="Kazakhstan_IELTS_course_tuition.html" class="hover:text-white transition" data-i18n="footer.students_materials">Бесплатные материалы</a></li>
+            <li><a href="ielts-guide.html" class="hover:text-white transition" data-i18n="footer.students_ielts_guide">Гид по экзамену IELTS</a></li>
+            <li><a href="videos.html" class="hover:text-white transition" data-i18n="footer.students_videos">Видео с занятий</a></li>
+            <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.students_reviews">Отзывы студентов</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-slate-300 mb-4" data-i18n="footer.quicklinks_title">Быстрые ссылки</h4>
+          <ul class="space-y-2.5 text-sm text-slate-400">
+            <li><a href="index.html" class="hover:text-white transition" data-i18n="footer.quicklinks_home">Главная</a></li>
+            <li><a href="index.html#about" class="hover:text-white transition" data-i18n="footer.quicklinks_about">О нас</a></li>
+            <li><a href="index.html#courses" class="hover:text-white transition" data-i18n="footer.quicklinks_courses">Курсы</a></li>
+            <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.quicklinks_reviews">Отзывы</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-sm uppercase tracking-wider text-slate-300 mb-4" data-i18n="footer.contact_title">Контакты</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li>
+              <a href="https://wa.me/77081726414?text=Hi%2C+I+have+a+question+about+Kazakhstan+IELTS." target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white transition">
+                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
+                <span>WhatsApp: +7 708 172 6414</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/Kazakhstan_ielts" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white transition">
+                <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                <span data-i18n="footer.contact_instagram">Instagram: @Kazakhstan_ielts</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between flex-wrap gap-2 text-xs text-slate-500 mt-10 border-t border-slate-800 pt-5">
+        <p data-i18n="footer.copyright">&copy; 2025 Kazakhstan IELTS. Все права защищены.</p>
+        <a href="#top" class="hover:text-white transition" data-i18n="footer.backtotop">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/77081726414?text=Hi%2C+I+have+a+question+about+Kazakhstan+IELTS+classes." target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="whatsapp-float w-14 h-14 rounded-full flex items-center justify-center">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
+  </a>
+
+  <!-- AOS Library Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+    });
+  </script>
+</body>
+
+</html>

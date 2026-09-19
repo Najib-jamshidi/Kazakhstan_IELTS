@@ -103,3 +103,20 @@ body {
 .divider-dashed {
   border-top: 1px dashed #e2e8f0;
 }
+
+/* ---------- Video gallery category filter pills ---------- */
+.filter-pill {
+  background-color: #ffffff;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+.filter-pill:hover {
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+.filter-pill.is-active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 10px 40px -12px rgba(30, 58, 138, 0.18);
+}
