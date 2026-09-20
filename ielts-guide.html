@@ -74,8 +74,8 @@
       </div>
 
       <nav :class="{ 'flex': open, 'hidden': !open }" class="hidden md:flex md:flex-row flex-col flex-grow md:items-center pb-4 md:pb-0 md:justify-end gap-0.5 md:gap-1 transition duration-300">
-        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html" data-i18n="nav.home">Главная</a>
-        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#about" data-i18n="nav.about">О нас</a>
+        <a @click="open = false" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html" data-i18n="nav.home">Главная</a>
+        <a @click="open = false" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#about" data-i18n="nav.about">О нас</a>
 
         <div class="relative" @mouseenter="coursesOpen = true" @mouseleave="coursesOpen = false">
           <button @click="coursesOpen = !coursesOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
@@ -84,15 +84,15 @@
           </button>
           <div x-show="coursesOpen" x-cloak :class="{ 'dropdown-open': coursesOpen }" class="dropdown-panel md:absolute md:top-full md:left-0 md:w-64 md:pt-2">
             <div class="md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2">
-              <a href="general-english.html" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_general">Общий английский</a>
-              <a href="ielts-guide.html" class="block px-4 py-2.5 text-sm rounded-xl font-semibold text-brand-700 bg-brand-50" data-i18n="nav.courses_ielts">Подготовка к IELTS</a>
-              <a href="Kazakhstan_IELTS_course_tuition.html" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_pricing">Полные тарифы и калькулятор</a>
+              <a @click="open = false" href="general-english.html" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_general">Общий английский</a>
+              <a @click="open = false" href="ielts-guide.html" class="block px-4 py-2.5 text-sm rounded-xl font-semibold text-brand-700 bg-brand-50" data-i18n="nav.courses_ielts">Подготовка к IELTS</a>
+              <a @click="open = false" href="Kazakhstan_IELTS_course_tuition.html" class="block px-4 py-2.5 text-sm rounded-xl text-slate-600 hover:bg-brand-50 hover:text-brand-700" data-i18n="nav.courses_pricing">Полные тарифы и калькулятор</a>
             </div>
           </div>
         </div>
 
-        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="videos.html" data-i18n="nav.videos">Видео</a>
-        <!-- <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a> -->
+        <a @click="open = false" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="videos.html" data-i18n="nav.videos">Видео</a>
+        <!-- <a @click="open = false" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a> -->
 
         <div class="relative md:ml-1" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
           <button @click="langOpen = !langOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1.5 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
@@ -102,14 +102,14 @@
           </button>
           <div x-show="langOpen" x-cloak :class="{ 'dropdown-open': langOpen }" class="dropdown-panel md:absolute md:top-full md:right-0 md:w-40 md:pt-2">
             <div class="md:bg-white md:shadow-xl md:rounded-2xl md:border md:border-slate-100 md:p-2">
-              <button type="button" data-lang-option="ru" @click="i18n.apply('ru'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Русский</button>
-              <button type="button" data-lang-option="kk" @click="i18n.apply('kk'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Қазақша</button>
-              <button type="button" data-lang-option="en" @click="i18n.apply('en'); langOpen = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">English</button>
+              <button type="button" data-lang-option="ru" @click="i18n.apply('ru'); langOpen = false; open = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Русский</button>
+              <button type="button" data-lang-option="kk" @click="i18n.apply('kk'); langOpen = false; open = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">Қазақша</button>
+              <button type="button" data-lang-option="en" @click="i18n.apply('en'); langOpen = false; open = false" class="w-full text-left block px-4 py-2 text-sm rounded-xl text-slate-600 hover:bg-brand-50">English</button>
             </div>
           </div>
         </div>
 
-        <a class="mt-2 md:mt-0 md:ml-3 inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm text-center text-white rounded-full shadow-soft hover:opacity-90 transition bg-[#25d366]" href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener">
+        <a @click="open = false" class="mt-2 md:mt-0 md:ml-3 inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm text-center text-white rounded-full shadow-soft hover:opacity-90 transition bg-[#25d366]" href="https://wa.me/77081726414?text=Hi%2C+I+want+to+join+Kazakhstan+IELTS+classes." target="_blank" rel="noopener">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
           <span data-i18n="nav.whatsapp">Написать в WhatsApp</span>
         </a>
