@@ -57,21 +57,8 @@
         ielts_title: "Фокус на IELTS",
         ielts_sub: "Практика в формате реального экзамена"
       },
-      platform: {
-        title1: "Универсальная",
-        title2: "платформа для изучения английского",
-        desc: "Kazakhstan IELTS предлагает структурированные уроки, прямую обратную связь от преподавателя и прозрачные тарифные планы."
-      },
       features: {
-        card1_title: "Тарифы и курсы",
-        card1_desc: "Структурированные варианты общего английского и подготовки к IELTS, разбивка цен, расписание занятий и интерактивный калькулятор скидок.",
-        card1_cta: "Смотреть тарифы",
-        card2_title: "Отзывы студентов",
-        card2_desc: "Смотрите отзывы нынешних и бывших учеников и делитесь своим впечатлением после занятия.",
-        card2_cta: "Читать отзывы",
-        card3_title: "Бесплатные пробные экзамены",
-        card3_desc: "Доступ к бесплатным пробным экзаменам по чтению и аудированию, PDF-материалам для скачивания и заданиям для домашней практики — всё включено в стоимость.",
-        card3_cta: "Узнать больше"
+        card1_cta: "Смотреть тарифы"
       },
       courses: {
         title1: "Наши",
@@ -353,9 +340,6 @@
         band5_title: "Средне",
         band5_desc: "Частичное владение языком, справляется с общим смыслом в большинстве ситуаций.",
         band_note: "Полная шкала включает баллы от 1 (не владеет языком) до 9 (эксперт). Большинство университетов и иммиграционных программ требуют балл от 5.5 до 7.5.",
-        img_classroom_caption: "Фото: момент живого занятия",
-        img_bandchart_caption: "Инфографика: таблица баллов IELTS",
-        img_comparison_caption: "Инфографика: Academic vs General Training",
         cta_title: "Готовы начать подготовку к IELTS?",
         cta_desc: "Запишитесь на бесплатную консультацию, чтобы определить свой текущий уровень и подобрать программу подготовки под ваш целевой балл.",
         cta_contact_label: "📲 Напишите нам:",
@@ -399,8 +383,6 @@
         method_card2_desc: "Преподаватель проверяет домашние задания и разбирает ошибки на следующем занятии, чтобы закрепить материал.",
         method_card3_title: "Гарантированный прогресс",
         method_card3_desc: "Регулярная практика в классе и дома — это то, что действительно гарантирует стабильный рост от уровня к уровню.",
-        img_books_caption: "Фото: учебники English File",
-        img_classroom_caption: "Фото: момент занятия по общему английскому",
         cta_title: "Готовы начать путь к свободному английскому?",
         cta_desc: "Определите свой текущий уровень и начните обучение по программе General English уже на этой неделе.",
         cta_contact_label: "📲 Напишите нам:",
@@ -490,21 +472,8 @@
         ielts_title: "IELTS-ке бағытталған",
         ielts_sub: "Нақты емтихан форматындағы практика"
       },
-      platform: {
-        title1: "Бір орталықтан",
-        title2: "ағылшын тілін үйрену платформасы",
-        desc: "Kazakhstan IELTS құрылымдалған сабақтар, мұғалімнен тікелей кері байланыс және ашық баға жоспарларын ұсынады."
-      },
       features: {
-        card1_title: "Баға және курстар",
-        card1_desc: "Жалпы ағылшын және IELTS дайындығының құрылымдалған нұсқалары, баға бөлшектемесі, сабақ кестесі және интерактивті жеңілдік калькуляторы.",
-        card1_cta: "Бағаны көру",
-        card2_title: "Студенттердің пікірлері",
-        card2_desc: "Қазіргі және бұрынғы оқушылардың пікірлерін оқыңыз және сабақтан кейін өз әсеріңізбен бөлісіңіз.",
-        card2_cta: "Пікірлерді оқу",
-        card3_title: "Тегін сынақ емтихандары",
-        card3_desc: "Оқу және тыңдалым бойынша тегін сынақ емтихандарына, жүктеп алуға болатын PDF материалдарға және үй тапсырмасы жаттығуларына қолжетімділік — барлығы оқу ақысына кіреді.",
-        card3_cta: "Толығырақ білу"
+        card1_cta: "Бағаны көру"
       },
       courses: {
         title1: "Біздің",
@@ -786,9 +755,6 @@
         band5_title: "Орташа",
         band5_desc: "Ішінара меңгеру, көптеген жағдайда жалпы мағынаны түсіне алады.",
         band_note: "Толық шкала 1 баллдан (тілді білмейді) 9 баллға (сарапшы) дейін созылады. Университеттер мен иммиграциялық бағдарламалардың көпшілігі 5.5–7.5 балл аралығын талап етеді.",
-        img_classroom_caption: "Фото: тірі сабақ сәті",
-        img_bandchart_caption: "Инфографика: IELTS балл кестесі",
-        img_comparison_caption: "Инфографика: Academic vs General Training",
         cta_title: "IELTS-ке дайындықты бастауға дайынсыз ба?",
         cta_desc: "Ағымдағы деңгейіңізді анықтап, мақсатты баллыңызға сай дайындық жоспарын таңдау үшін тегін кеңеске жазылыңыз.",
         cta_contact_label: "📲 Бізге жазыңыз:",
@@ -832,8 +798,6 @@
         method_card2_desc: "Мұғалім үй тапсырмаларын тексереді және келесі сабақта қателерді талдайды, осылайша меңгерген материал есте қалады.",
         method_card3_title: "Кепілді прогресс",
         method_card3_desc: "Сыныпта және үйде тұрақты жаттығу — деңгейден деңгейге тұрақты өсуге шынымен кепілдік беретін нәрсе.",
-        img_books_caption: "Фото: English File оқулықтары",
-        img_classroom_caption: "Фото: жалпы ағылшын тілі сабағының сәті",
         cta_title: "Еркін ағылшын тіліне жол ашуға дайынсыз ба?",
         cta_desc: "Ағымдағы деңгейіңізді анықтап, General English бағдарламасы бойынша осы аптада оқуды бастаңыз.",
         cta_contact_label: "📲 Бізге жазыңыз:",
@@ -923,21 +887,8 @@
         ielts_title: "IELTS-Focused",
         ielts_sub: "Real exam-style practice"
       },
-      platform: {
-        title1: "All-In-One",
-        title2: "English Learning Platform",
-        desc: "Kazakhstan IELTS provides structured lessons, direct teacher feedback, and transparent tuition plans."
-      },
       features: {
-        card1_title: "Tuition & Courses",
-        card1_desc: "Structured English and IELTS prep options, pricing breakdowns, class schedules, and an interactive discount calculator.",
-        card1_cta: "View Rates",
-        card2_title: "Student Reviews",
-        card2_desc: "See feedback from current and past students, and share your own experience after a lesson.",
-        card2_cta: "Read Reviews",
-        card3_title: "Free Practice Exams",
-        card3_desc: "Access free Reading and Listening mock exams, downloadable PDF resources, and guided homework sets included with tuition.",
-        card3_cta: "Learn More"
+        card1_cta: "View Rates"
       },
       courses: {
         title1: "Our",
@@ -1219,9 +1170,6 @@
         band5_title: "Modest User",
         band5_desc: "Partial command, coping with overall meaning in most situations.",
         band_note: "The full scale runs from 1 (non-user) to 9 (expert). Most universities and immigration programs require a score between 5.5 and 7.5.",
-        img_classroom_caption: "Photo: a live lesson in progress",
-        img_bandchart_caption: "Infographic: IELTS band score chart",
-        img_comparison_caption: "Infographic: Academic vs General Training",
         cta_title: "Ready to Start Your IELTS Prep?",
         cta_desc: "Book a free consultation to find your current level and get matched with a prep plan for your target band score.",
         cta_contact_label: "📲 Message us:",
@@ -1265,8 +1213,6 @@
         method_card2_desc: "Your teacher checks your homework and reviews mistakes in the next lesson, so nothing you've learned goes to waste.",
         method_card3_title: "Guaranteed Progress",
         method_card3_desc: "Consistent practice in class and at home is what actually guarantees steady improvement from one level to the next.",
-        img_books_caption: "Photo: English File coursebooks",
-        img_classroom_caption: "Photo: a General English lesson in progress",
         cta_title: "Ready to Start Your Path to Fluency?",
         cta_desc: "Find your current level and start your General English program as early as this week.",
         cta_contact_label: "📲 Message us:",
