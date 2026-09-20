@@ -92,7 +92,7 @@
         </div>
 
         <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="videos.html" data-i18n="nav.videos">Видео</a>
-        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a>
+        <!-- <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a> -->
 
         <div class="relative md:ml-1" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
           <button @click="langOpen = !langOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1.5 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
@@ -172,13 +172,8 @@
         </div>
 
         <div data-aos="fade-up" data-aos-delay="150" class="lg:col-span-2">
-          <!-- IMAGE PLACEHOLDER — replace with a real photo.
-               Suggested file: img/ielts-guide/classroom.jpg
-               <img src="img/ielts-guide/classroom.jpg" alt="Kazakhstan IELTS students taking part in a live online class" class="w-full h-full object-cover" />
-          -->
-          <div class="aspect-square rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-3 text-slate-400 p-6 text-center shadow-card">
-            <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 16.5V4.5A1.5 1.5 0 014.5 3h15A1.5 1.5 0 0121 4.5v15a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 19.5v-3zm10.5-9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" /></svg>
-            <span class="text-xs font-medium" data-i18n="ielts_guide.img_classroom_caption">Фото: момент живого занятия</span>
+          <div class="aspect-square rounded-3xl overflow-hidden shadow-card border border-slate-100">
+            <img src="img/IELTS/Teaching_Online.jpeg" alt="Kazakhstan IELTS students taking part in a live online class" class="w-full h-full object-cover" />
           </div>
         </div>
       </div>
@@ -226,13 +221,8 @@
       </div>
 
       <div data-aos="fade-up" class="mt-8">
-        <!-- IMAGE PLACEHOLDER — replace with a real infographic comparing Academic vs General Training.
-             Suggested file: img/ielts-guide/academic-vs-general.jpg
-             <img src="img/ielts-guide/academic-vs-general.jpg" alt="Comparison infographic: IELTS Academic vs General Training" class="w-full h-full object-cover" />
-        -->
-        <div class="aspect-[21/9] rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-3 text-slate-400 p-6 text-center">
-          <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
-          <span class="text-xs font-medium" data-i18n="ielts_guide.img_comparison_caption">Инфографика: Academic vs General Training</span>
+        <div class="aspect-square max-w-xl mx-auto rounded-3xl overflow-hidden shadow-card border border-slate-100">
+          <img src="img/IELTS/IELTS_Road_Map.jpg" alt="Comparison infographic: IELTS Academic vs General Training" class="w-full h-full object-contain" />
         </div>
       </div>
     </section>
@@ -322,13 +312,8 @@
       <p class="text-center text-xs text-slate-400 mt-6 max-w-xl mx-auto leading-relaxed" data-i18n="ielts_guide.band_note">Полная шкала включает баллы от 1 (не владеет языком) до 9 (эксперт). Большинство университетов и иммиграционных программ требуют балл от 5.5 до 7.5.</p>
 
       <div data-aos="fade-up" class="mt-8">
-        <!-- IMAGE PLACEHOLDER — replace with a real IELTS band score chart graphic.
-             Suggested file: img/ielts-guide/band-score-chart.jpg
-             <img src="img/ielts-guide/band-score-chart.jpg" alt="IELTS band score chart from 1 to 9" class="w-full h-full object-cover" />
-        -->
-        <div class="aspect-[21/9] rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-3 text-slate-400 p-6 text-center">
-          <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
-          <span class="text-xs font-medium" data-i18n="ielts_guide.img_bandchart_caption">Инфографика: таблица баллов IELTS</span>
+        <div class="aspect-[2/1] rounded-3xl overflow-hidden shadow-card border border-slate-100">
+          <img src="img/IELTS/IELTS_Band_Score.png" alt="IELTS band score chart from 1 to 9" class="w-full h-full object-contain" />
         </div>
       </div>
     </section>
@@ -368,7 +353,7 @@
             <li><a href="Kazakhstan_IELTS_course_tuition.html" class="hover:text-white transition" data-i18n="footer.students_materials">Бесплатные материалы</a></li>
             <li><a href="ielts-guide.html" class="hover:text-white transition" data-i18n="footer.students_ielts_guide">Гид по экзамену IELTS</a></li>
             <li><a href="videos.html" class="hover:text-white transition" data-i18n="footer.students_videos">Видео с занятий</a></li>
-            <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.students_reviews">Отзывы студентов</a></li>
+            <!-- <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.students_reviews">Отзывы студентов</a></li> -->
           </ul>
         </div>
 
@@ -378,7 +363,7 @@
             <li><a href="index.html" class="hover:text-white transition" data-i18n="footer.quicklinks_home">Главная</a></li>
             <li><a href="index.html#about" class="hover:text-white transition" data-i18n="footer.quicklinks_about">О нас</a></li>
             <li><a href="index.html#courses" class="hover:text-white transition" data-i18n="footer.quicklinks_courses">Курсы</a></li>
-            <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.quicklinks_reviews">Отзывы</a></li>
+            <!-- <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.quicklinks_reviews">Отзывы</a></li> -->
           </ul>
         </div>
 

@@ -100,7 +100,9 @@
         </div>
 
         <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="videos.html" data-i18n="nav.videos">Видео</a>
+        <!-- Reviews nav link hidden until reviews section is reactivated
         <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="#reviews" data-i18n="nav.reviews">Отзывы</a>
+        -->
 
         <div class="relative md:ml-1" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
           <button @click="langOpen = !langOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1.5 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
@@ -360,6 +362,7 @@
           </div>
         </div>
 
+        <!-- "Read student reviews" card hidden until reviews section is reactivated
         <div class="relative md:w-5/12 group overflow-hidden rounded-2xl shadow-card">
           <img class="w-full h-64 sm:h-72 object-cover transition-transform duration-500 group-hover:scale-105" src="img/Rectangle 21.png" alt="Read student reviews" />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex items-end justify-center p-6">
@@ -369,6 +372,7 @@
             </div>
           </div>
         </div>
+        -->
       </div>
     </section>
 
@@ -434,7 +438,7 @@
       </div>
     </section>
 
-    <!-- Reviews Section -->
+    <!-- Reviews Section — hidden for now, reactivate by removing this comment wrapper
     <section id="reviews" class="mt-4 mb-24 scroll-mt-24">
       <div data-aos="fade-up" class="text-center max-w-screen-md mx-auto">
         <h2 class="text-3xl font-extrabold mb-3 text-slate-900"><span data-i18n="reviews.title1">Отзывы</span> <span class="text-accent-600" data-i18n="reviews.title2">студентов</span></h2>
@@ -450,7 +454,7 @@
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
 
-        <!-- Real student review card -->
+        Real student review card:
         <div data-aos="fade-up" class="bg-white shadow-card border border-slate-100 rounded-2xl p-6 flex flex-col">
           <div class="flex items-center gap-3">
             <img class="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-brand-100" src="img/WhatsApp_Image_2024-12-01_at_12.07.26_0903b7c7-removebg-preview.png" alt="Kazakhstan IELTS student" />
@@ -472,7 +476,7 @@
           </div>
         </div>
 
-        <!-- Placeholder review slot 1 -->
+        Placeholder review slot 1:
         <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-2xl p-6 flex flex-col border-2 border-dashed border-slate-200 hover:border-brand-300 transition">
           <div class="flex items-center gap-3">
             <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-400 text-xl">🙂</div>
@@ -484,7 +488,7 @@
           <p class="text-slate-400 text-sm leading-relaxed mt-4 flex-1 italic" data-i18n="reviews.placeholder_quote">Место для следующего отзыва студента — напишите нам в WhatsApp, чтобы попасть сюда.</p>
         </div>
 
-        <!-- Placeholder review slot 2 -->
+        Placeholder review slot 2:
         <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-2xl p-6 flex flex-col border-2 border-dashed border-slate-200 hover:border-brand-300 transition sm:col-span-2 lg:col-span-1">
           <div class="flex items-center gap-3">
             <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 text-slate-400 text-xl">🙂</div>
@@ -504,6 +508,7 @@
         </a>
       </div>
     </section>
+    -->
   </main>
 
   <!-- Footer -->
@@ -527,7 +532,7 @@
             <li><a href="Kazakhstan_IELTS_course_tuition.html" class="hover:text-white transition" data-i18n="footer.students_materials">Бесплатные материалы</a></li>
             <li><a href="ielts-guide.html" class="hover:text-white transition" data-i18n="footer.students_ielts_guide">Гид по экзамену IELTS</a></li>
             <li><a href="videos.html" class="hover:text-white transition" data-i18n="footer.students_videos">Видео с занятий</a></li>
-            <li><a href="#reviews" class="hover:text-white transition" data-i18n="footer.students_reviews">Отзывы студентов</a></li>
+            <!-- <li><a href="#reviews" class="hover:text-white transition" data-i18n="footer.students_reviews">Отзывы студентов</a></li> -->
           </ul>
         </div>
 
@@ -538,7 +543,7 @@
             <li><a href="#top" class="hover:text-white transition" data-i18n="footer.quicklinks_home">Главная</a></li>
             <li><a href="#about" class="hover:text-white transition" data-i18n="footer.quicklinks_about">О нас</a></li>
             <li><a href="#courses" class="hover:text-white transition" data-i18n="footer.quicklinks_courses">Курсы</a></li>
-            <li><a href="#reviews" class="hover:text-white transition" data-i18n="footer.quicklinks_reviews">Отзывы</a></li>
+            <!-- <li><a href="#reviews" class="hover:text-white transition" data-i18n="footer.quicklinks_reviews">Отзывы</a></li> -->
           </ul>
         </div>
 

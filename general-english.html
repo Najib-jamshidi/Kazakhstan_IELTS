@@ -92,7 +92,7 @@
         </div>
 
         <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="videos.html" data-i18n="nav.videos">Видео</a>
-        <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a>
+        <!-- <a class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a> -->
 
         <div class="relative md:ml-1" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
           <button @click="langOpen = !langOpen" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg w-full text-left flex items-center gap-1.5 text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500">
@@ -231,32 +231,20 @@
         </div>
 
         <div data-aos="fade-up" data-aos-delay="150" class="lg:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-4">
-          <!-- IMAGE PLACEHOLDER x5 — replace each with a photo of the matching English File coursebook cover.
-               Suggested files: img/general-english/english-file-a2.jpg ... english-file-c2.jpg
-               <img src="img/general-english/english-file-a2.jpg" alt="English File Pre-Intermediate (A2) coursebook cover" class="w-full h-full object-cover" />
-          -->
-          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-            <span class="text-[11px] font-semibold">A2</span>
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-card border border-slate-100">
+            <img src="img/General_English/A2.jpg" alt="English File Pre-Intermediate (A2) coursebook cover" class="w-full h-full object-cover" />
           </div>
-          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-            <span class="text-[11px] font-semibold">B1</span>
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-card border border-slate-100">
+            <img src="img/General_English/B1.jpg" alt="English File Intermediate (B1) coursebook cover" class="w-full h-full object-cover" />
           </div>
-          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-            <span class="text-[11px] font-semibold">B2</span>
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-card border border-slate-100">
+            <img src="img/General_English/B2.jpg" alt="English File Upper-Intermediate (B2) coursebook cover" class="w-full h-full object-cover" />
           </div>
-          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-            <span class="text-[11px] font-semibold">C1</span>
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-card border border-slate-100">
+            <img src="img/General_English/C1.jpg" alt="English File Advanced (C1) coursebook cover" class="w-full h-full object-cover" />
           </div>
-          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
-            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-            <span class="text-[11px] font-semibold">C2</span>
-          </div>
-          <div class="aspect-[3/4] rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center gap-2 text-slate-400 p-3 text-center">
-            <span class="text-xs font-medium" data-i18n="ge_program.img_books_caption">Фото: учебники English File</span>
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-card border border-slate-100">
+            <img src="img/General_English/C2.jpg" alt="English File Proficiency (C2) coursebook cover" class="w-full h-full object-cover" />
           </div>
         </div>
       </div>
@@ -287,16 +275,6 @@
         </div>
       </div>
 
-      <div data-aos="fade-up" class="mt-8">
-        <!-- IMAGE PLACEHOLDER — replace with a real photo of a General English lesson.
-             Suggested file: img/general-english/classroom.jpg
-             <img src="img/general-english/classroom.jpg" alt="Kazakhstan IELTS General English lesson in progress" class="w-full h-full object-cover" />
-        -->
-        <div class="aspect-[21/9] rounded-3xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center gap-3 text-slate-400 p-6 text-center">
-          <svg class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 16.5V4.5A1.5 1.5 0 014.5 3h15A1.5 1.5 0 0121 4.5v15a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 19.5v-3zm10.5-9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" /></svg>
-          <span class="text-xs font-medium" data-i18n="ge_program.img_classroom_caption">Фото: момент занятия по общему английскому</span>
-        </div>
-      </div>
     </section>
 
     <!-- CTA -->
@@ -334,7 +312,7 @@
             <li><a href="Kazakhstan_IELTS_course_tuition.html" class="hover:text-white transition" data-i18n="footer.students_materials">Бесплатные материалы</a></li>
             <li><a href="ielts-guide.html" class="hover:text-white transition" data-i18n="footer.students_ielts_guide">Гид по экзамену IELTS</a></li>
             <li><a href="videos.html" class="hover:text-white transition" data-i18n="footer.students_videos">Видео с занятий</a></li>
-            <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.students_reviews">Отзывы студентов</a></li>
+            <!-- <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.students_reviews">Отзывы студентов</a></li> -->
           </ul>
         </div>
 
@@ -344,7 +322,7 @@
             <li><a href="index.html" class="hover:text-white transition" data-i18n="footer.quicklinks_home">Главная</a></li>
             <li><a href="index.html#about" class="hover:text-white transition" data-i18n="footer.quicklinks_about">О нас</a></li>
             <li><a href="index.html#courses" class="hover:text-white transition" data-i18n="footer.quicklinks_courses">Курсы</a></li>
-            <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.quicklinks_reviews">Отзывы</a></li>
+            <!-- <li><a href="index.html#reviews" class="hover:text-white transition" data-i18n="footer.quicklinks_reviews">Отзывы</a></li> -->
           </ul>
         </div>
 

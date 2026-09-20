@@ -430,7 +430,9 @@
         v3_title: "Практика Speaking с разбором ошибок",
         v3_caption: "Студент отвечает на вопросы Part 2 (карточка), а затем получает подробную обратную связь от преподавателя.",
         v4_title: "История успеха: путь к нужному баллу",
-        v4_caption: "Студент делится, как готовился к IELTS с Kazakhstan IELTS и какого балла удалось достичь."
+        v4_caption: "Студент делится, как готовился к IELTS с Kazakhstan IELTS и какого балла удалось достичь.",
+        v5_title: "Отзыв студента",
+        v5_caption: "Короткое видео с отзывом ученика о занятиях в Kazakhstan IELTS."
       }
     },
 
@@ -861,7 +863,9 @@
         v3_title: "Қателерді талдаумен айтылым практикасы",
         v3_caption: "Студент Part 2 (карточка) сұрақтарына жауап береді, содан кейін мұғалімнен толық кері байланыс алады.",
         v4_title: "Табыс тарихы: керекті баллға жету жолы",
-        v4_caption: "Студент Kazakhstan IELTS-пен қалай дайындалғанын және қандай баллға жеткенін бөліседі."
+        v4_caption: "Студент Kazakhstan IELTS-пен қалай дайындалғанын және қандай баллға жеткенін бөліседі.",
+        v5_title: "Студенттің пікірі",
+        v5_caption: "Kazakhstan IELTS сабақтары туралы студенттің қысқа бейне пікірі."
       }
     },
 
@@ -1292,7 +1296,9 @@
         v3_title: "Speaking Practice with Detailed Feedback",
         v3_caption: "A student answers a Part 2 cue card question, then receives detailed feedback from the teacher.",
         v4_title: "Success Story: Reaching the Target Band",
-        v4_caption: "A student shares how they prepared with Kazakhstan IELTS and the band score they achieved."
+        v4_caption: "A student shares how they prepared with Kazakhstan IELTS and the band score they achieved.",
+        v5_title: "Student Feedback",
+        v5_caption: "A short video where a student shares their feedback about studying with Kazakhstan IELTS."
       }
     }
   };
