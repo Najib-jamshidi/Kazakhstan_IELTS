@@ -38,6 +38,12 @@
       }
     }
   </script>
+
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body class="bg-slate-50 text-slate-700 font-sans antialiased min-h-screen" data-i18n-title="meta.tuition_title">
 
@@ -318,7 +324,7 @@
 
         <!-- Select Program -->
         <div class="space-y-1.5">
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="tuition.calc.select_program_label">Выберите программу</label>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300" data-i18n="tuition.calc.select_program_label">Выберите прогр��мму</label>
           <select id="calcProgram" onchange="calculateTuition()" class="select-caret-dark w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium">
             <option value="ge_group" data-i18n="tuition.calc.opt_ge_group">Общий английский — Группа (3,000 KZT/занятие)</option>
             <option value="ge_ind" data-i18n="tuition.calc.opt_ge_ind">Общий английский — Индивидуально (5,000 KZT/занятие)</option>
