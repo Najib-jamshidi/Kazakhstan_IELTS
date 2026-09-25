@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Видео с занятий | Kazakhstan IELTS</title>
-  <meta name="description" content="Видео с реальных занятий Kazakhstan IELTS: демо-уроки, отрывки с занятий IELTS, практика говорения и истории успеха студентов." />
+  <title>Расписание и свободное время | Kazakhstan IELTS</title>
+  <meta name="description" content="Посмотрите свободное время преподавателя и выберите удобный слот для занятий английским и IELTS онлайн." />
   <link rel="icon" type="image/png" href="img/Logo.png" />
 
   <!-- Tailwind CSS (JIT via CDN) -->
@@ -61,7 +61,7 @@
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
-<body class="antialiased font-sans text-slate-700 bg-slate-50" id="top" data-i18n-title="videos_page.meta_title" data-i18n-desc="videos_page.meta_desc">
+<body class="antialiased font-sans text-slate-700 bg-slate-50" id="top" data-i18n-title="schedule.meta_title" data-i18n-desc="schedule.meta_desc">
 
   <!-- Navigation Header -->
   <header x-data="{ open: false, coursesOpen: false, langOpen: false }" class="w-full bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
@@ -97,8 +97,8 @@
           </div>
         </div>
 
-        <a @click="open = false" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-brand-700 bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="videos.html" data-i18n="nav.videos">Видео</a>
-        <a @click="open = false" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="schedule.html" data-i18n="nav.schedule">Расписание</a>
+        <a @click="open = false" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="videos.html" data-i18n="nav.videos">Видео</a>
+        <a @click="open = false" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-brand-700 bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="schedule.html" data-i18n="nav.schedule">Расписание</a>
         <!-- <a @click="open = false" class="px-4 py-2.5 md:py-2 text-sm font-medium rounded-lg text-slate-600 hover:text-brand-700 hover:bg-brand-50 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500" href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a> -->
 
         <div class="relative md:ml-1" @mouseenter="langOpen = true" @mouseleave="langOpen = false">
@@ -126,40 +126,106 @@
 
   <!-- Hero -->
   <section class="relative overflow-hidden bg-mesh">
-    <div class="max-w-screen-lg px-4 sm:px-8 mx-auto relative py-14 sm:py-20 text-center">
-      <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-4" data-i18n="videos_page.hero_eyebrow">Видеогалерея</span>
-      <h1 class="text-4xl sm:text-5xl lg:text-[3.2rem] font-extrabold leading-[1.1] tracking-tight">
-        <span class="block text-slate-900" data-i18n="videos_page.hero_title1">Смотрите, как проходят</span>
-        <span class="block bg-clip-text text-transparent bg-gradient-to-r from-brand-700 via-brand-600 to-accent-600" data-i18n="videos_page.hero_title2">наши занятия</span>
+    <div class="max-w-screen-lg px-4 sm:px-8 mx-auto relative py-12 sm:py-16 text-center">
+      <span class="inline-block text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full mb-4" data-i18n="schedule.hero_eyebrow">Расписание</span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight">
+        <span class="block text-slate-900" data-i18n="schedule.hero_title1">Выберите удобное</span>
+        <span class="block bg-clip-text text-transparent bg-gradient-to-r from-brand-700 via-brand-600 to-accent-600" data-i18n="schedule.hero_title2">время для занятий</span>
       </h1>
-      <p class="text-slate-500 mt-6 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" data-i18n="videos_page.hero_subtitle">
-        Демо-уроки, отрывки с реальных занятий, практика говорения с обратной связью и истории успеха наших студентов.
-      </p>
+      <p class="text-slate-500 mt-5 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" data-i18n="schedule.hero_subtitle">Зелёные слоты свободны. Выберите одно или несколько удобных окон и отправьте запрос в WhatsApp — мы подтвердим время.</p>
+      <div class="flex flex-wrap items-center justify-center gap-2 mt-6 text-xs font-semibold">
+        <span class="inline-flex items-center gap-1.5 bg-white border border-slate-200 rounded-full px-3 py-1.5 text-slate-600">🕒 <span data-i18n="schedule.tz_note">Время указано по Алматы (UTC+5)</span></span>
+        <span class="inline-flex items-center gap-1.5 bg-white border border-slate-200 rounded-full px-3 py-1.5 text-slate-600"><span class="relative flex w-2 h-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex rounded-full w-2 h-2 bg-emerald-500"></span></span> <span data-i18n="schedule.live_note">Обновляется автоматически</span></span>
+      </div>
     </div>
   </section>
 
-  <main class="container px-4 lg:px-8 mx-auto max-w-screen-xl overflow-x-hidden">
+  <main class="container px-4 lg:px-8 mx-auto max-w-screen-xl">
 
-    <!-- Category Filters -->
-    <div class="flex flex-wrap justify-center gap-2 mt-4 mb-12" id="categoryFilters">
-      <button type="button" data-filter="all" class="filter-pill is-active px-4 py-2 rounded-full text-sm font-semibold border transition" data-i18n="videos_page.filter_all">Все видео</button>
-      <button type="button" data-filter="demo" class="filter-pill px-4 py-2 rounded-full text-sm font-semibold border transition" data-i18n="videos_page.category_demo">Демо-урок</button>
-      <button type="button" data-filter="highlight" class="filter-pill px-4 py-2 rounded-full text-sm font-semibold border transition" data-i18n="videos_page.category_highlight">Занятие по IELTS</button>
-      <button type="button" data-filter="speaking" class="filter-pill px-4 py-2 rounded-full text-sm font-semibold border transition" data-i18n="videos_page.category_speaking">Практика говорения</button>
-      <button type="button" data-filter="success" class="filter-pill px-4 py-2 rounded-full text-sm font-semibold border transition" data-i18n="videos_page.category_success">История успеха</button>
-    </div>
+    <section class="mt-10 sm:mt-12">
+      <!-- Loading -->
+      <div id="sched-loading" class="bg-white border border-slate-100 shadow-card rounded-3xl p-10 text-center">
+        <div class="w-10 h-10 mx-auto rounded-full border-4 border-brand-100 border-t-brand-600 animate-spin"></div>
+        <p class="text-sm text-slate-500 mt-4" data-i18n="schedule.loading">Загружаем актуальное расписание…</p>
+      </div>
 
-    <!-- Video Grid (rendered by JS from the VIDEOS array below) -->
-    <div id="videoGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24"></div>
+      <!-- Error -->
+      <div id="sched-error" class="hidden bg-white border border-slate-100 shadow-card rounded-3xl p-10 text-center">
+        <div class="text-3xl">📅</div>
+        <p class="text-sm text-slate-600 mt-3 max-w-md mx-auto" data-i18n="schedule.error">Не удалось загрузить расписание. Напишите нам в WhatsApp — мы подскажем свободное время.</p>
+        <div class="flex flex-wrap items-center justify-center gap-3 mt-5">
+          <button id="sched-retry" type="button" class="px-5 py-2.5 text-sm font-semibold rounded-full border border-slate-200 text-slate-700 hover:bg-slate-50" data-i18n="schedule.retry">Попробовать снова</button>
+          <a href="https://wa.me/77081726414" target="_blank" rel="noopener" class="px-5 py-2.5 text-sm font-semibold rounded-full text-white bg-[#25d366] hover:opacity-90" data-i18n="nav.whatsapp">Написать в WhatsApp</a>
+        </div>
+      </div>
 
-    <!-- CTA -->
-    <section class="mb-24">
-      <div data-aos="fade-up" class="bg-slate-900 bg-mesh-dark text-white rounded-3xl p-8 sm:p-10 text-center shadow-soft border border-slate-800">
-        <h3 class="text-2xl font-black mb-2" data-i18n="videos_page.cta_title">Хотите увидеть себя в нашей галерее?</h3>
-        <p class="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto mb-6 leading-relaxed" data-i18n="videos_page.cta_desc">Поделитесь своим прогрессом или запишитесь на пробное занятие — и, возможно, ваше видео появится здесь.</p>
-        <div class="inline-flex flex-wrap items-center justify-center gap-4 bg-slate-800 px-6 py-3.5 rounded-2xl border border-slate-700 shadow-inner">
-          <div class="flex items-center gap-2 text-slate-300 text-xs font-bold uppercase tracking-wider" data-i18n="videos_page.cta_contact_label">📲 Напишите нам:</div>
-          <a href="https://wa.me/77081726414" target="_blank" rel="noopener" class="text-base font-black text-brand-300 hover:text-white transition-colors">+7 708 172 6414 / WhatsApp</a>
+      <!-- Schedule -->
+      <div id="sched-app" class="hidden">
+        <!-- Day tabs -->
+        <div id="sched-tabs" role="tablist" class="flex gap-2 overflow-x-auto snap-x pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 sm:overflow-visible"></div>
+
+        <!-- Legend -->
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-4 text-xs text-slate-500">
+          <span class="inline-flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-emerald-100 border border-emerald-300"></span><span data-i18n="schedule.legend_free">Свободно</span></span>
+          <span class="inline-flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded slot-busy"></span><span data-i18n="schedule.legend_busy">Занято</span></span>
+          <span class="inline-flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-brand-600"></span><span data-i18n="schedule.legend_selected">Выбрано</span></span>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6 mt-6 items-start">
+          <!-- Selected day -->
+          <div id="sched-day-panel" class="lg:col-span-2 bg-white border border-slate-100 shadow-card rounded-3xl p-5 sm:p-7 scroll-mt-24">
+            <div class="flex items-baseline justify-between gap-3 mb-6">
+              <h2 id="sched-day-title" class="text-2xl font-extrabold text-slate-900"></h2>
+              <span id="sched-day-count" class="text-sm font-semibold text-emerald-600"></span>
+            </div>
+            <div id="sched-day-slots"></div>
+          </div>
+
+          <!-- Week overview -->
+          <aside class="bg-white border border-slate-100 shadow-card rounded-3xl p-5 sm:p-6 lg:sticky lg:top-24">
+            <h3 class="font-bold text-slate-900" data-i18n="schedule.overview_title">Неделя целиком</h3>
+            <p class="text-xs text-slate-500 mt-1 mb-4" data-i18n="schedule.overview_hint">Нажмите на день, чтобы увидеть свободные слоты</p>
+            <div id="sched-overview"></div>
+          </aside>
+        </div>
+
+        <!-- Booking bar -->
+        <div class="sticky bottom-4 z-40 mt-6">
+          <div class="bg-white/95 backdrop-blur-md border border-slate-200 shadow-soft rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center gap-3 mr-16 sm:mr-20">
+            <div class="flex-1 min-w-0">
+              <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5" data-i18n="schedule.selected_label">Выбрано:</p>
+              <div id="sched-selected" class="flex flex-wrap gap-1.5"></div>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <button id="sched-clear" type="button" class="hidden px-4 py-2.5 text-sm font-semibold rounded-full text-slate-500 hover:bg-slate-100" data-i18n="schedule.clear">Сбросить</button>
+              <a id="sched-book" href="#" target="_blank" rel="noopener" class="inline-flex flex-1 sm:flex-none items-center justify-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-full bg-[#25d366] hover:opacity-90 transition opacity-50 pointer-events-none">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
+                <span data-i18n="schedule.book">Отправить в WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="mt-20 mb-24">
+      <h2 data-aos="fade-up" class="text-3xl font-extrabold text-slate-900 text-center" data-i18n="schedule.how_title">Как записаться</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div data-aos="fade-up" class="bg-white shadow-card border border-slate-100 p-7 rounded-2xl">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl">🟢</div>
+          <h3 class="font-bold text-lg mt-4 text-slate-800" data-i18n="schedule.how1_title">Выберите время</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed" data-i18n="schedule.how1_desc">Нажмите на зелёные слоты — можно выбрать несколько дней.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="150" class="bg-white shadow-card border border-slate-100 p-7 rounded-2xl">
+          <div class="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center text-2xl">💬</div>
+          <h3 class="font-bold text-lg mt-4 text-slate-800" data-i18n="schedule.how2_title">Отправьте запрос</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed" data-i18n="schedule.how2_desc">Сообщение с выбранным временем откроется в WhatsApp.</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300" class="bg-white shadow-card border border-slate-100 p-7 rounded-2xl">
+          <div class="w-12 h-12 rounded-2xl bg-accent-50 text-accent-600 flex items-center justify-center text-2xl">✅</div>
+          <h3 class="font-bold text-lg mt-4 text-slate-800" data-i18n="schedule.how3_title">Получите подтверждение</h3>
+          <p class="text-slate-500 text-sm mt-2 leading-relaxed" data-i18n="schedule.how3_desc">Преподаватель подтвердит время и формат занятия.</p>
         </div>
       </div>
     </section>
@@ -230,113 +296,14 @@
     <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.49-9.84-10.01-9.84zm0 18.06c-1.5 0-2.97-.4-4.24-1.16l-.3-.18-3.12.82.83-3.04-.2-.31a8.03 8.03 0 01-1.24-4.29c0-4.44 3.61-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.16-8.05 8.16z"/></svg>
   </a>
 
+  <script src="js/schedule.js"></script>
+
   <!-- AOS Library Script -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
     });
-  </script>
-
-  <!--
-    ============================================================
-    VIDEO GALLERY DATA
-    ------------------------------------------------------------
-    To add or update a video, just edit this array. Nothing else
-    needs to change — the grid, badges, and translations render
-    automatically from this data.
-
-    - youtubeId: the ID from a YouTube URL, e.g. for
-      https://www.youtube.com/watch?v=abc123XYZ the ID is 'abc123XYZ'.
-      Leave it as an empty string '' to show a "coming soon" card
-      instead of a broken embed.
-    - category: one of 'demo' | 'highlight' | 'speaking' | 'success'
-    - titleKey / captionKey: point to translated text in js/i18n.js
-      under the `videos_page` namespace (so every video stays fully
-      translated in RU / KK / EN automatically). Add v5_title /
-      v5_caption keys there for a 5th video, etc.
-    ============================================================
-  -->
-  <script>
-    var VIDEOS = [
-      { youtubeId: '', category: 'demo', titleKey: 'videos_page.v1_title', captionKey: 'videos_page.v1_caption' },
-      { youtubeId: '', category: 'highlight', titleKey: 'videos_page.v2_title', captionKey: 'videos_page.v2_caption' },
-      { youtubeId: '', category: 'speaking', titleKey: 'videos_page.v3_title', captionKey: 'videos_page.v3_caption' },
-      { youtubeId: 'kX-Q4YhNQes', category: 'success', titleKey: 'videos_page.v4_title', captionKey: 'videos_page.v4_caption' },
-      { youtubeId: 'zEcH5cVJPME', category: 'success', titleKey: 'videos_page.v5_title', captionKey: 'videos_page.v5_caption' }
-    ];
-
-    var CATEGORY_STYLES = {
-      demo: { badge: 'bg-brand-50 text-brand-700', icon: '🎬' },
-      highlight: { badge: 'bg-indigo-50 text-indigo-700', icon: '🎯' },
-      speaking: { badge: 'bg-rose-50 text-rose-700', icon: '🗣️' },
-      success: { badge: 'bg-emerald-50 text-emerald-700', icon: '🏆' }
-    };
-
-    var activeFilter = 'all';
-
-    function videoCardHtml(v) {
-      var style = CATEGORY_STYLES[v.category] || { badge: 'bg-slate-100 text-slate-600', icon: '🎬' };
-      var categoryLabel = i18n.get('videos_page.category_' + v.category) || v.category;
-      var title = i18n.get(v.titleKey) || '';
-      var caption = i18n.get(v.captionKey) || '';
-
-      var media = v.youtubeId
-        ? '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' + v.youtubeId + '" title="' + title.replace(/"/g, '&quot;') + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-        : '<div class="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-slate-800 to-slate-900 text-white/60">' +
-            '<svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>' +
-            '<span class="text-xs font-medium px-4 text-center">' + (i18n.get('videos_page.empty_title') || '') + '</span>' +
-          '</div>';
-
-      return (
-        '<div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden flex flex-col" data-aos="fade-up">' +
-          '<div class="aspect-video bg-slate-900">' + media + '</div>' +
-          '<div class="p-5 flex flex-col flex-1">' +
-            '<span class="inline-flex self-start items-center gap-1.5 text-[11px] font-bold px-2.5 py-1 rounded-full mb-3 ' + style.badge + '">' + style.icon + ' ' + categoryLabel + '</span>' +
-            '<h3 class="font-bold text-slate-900 text-sm leading-snug">' + title + '</h3>' +
-            '<p class="text-xs text-slate-500 mt-2 leading-relaxed flex-1">' + caption + '</p>' +
-          '</div>' +
-        '</div>'
-      );
-    }
-
-    function renderVideos() {
-      var grid = document.getElementById('videoGrid');
-      if (!grid) return;
-      var items = VIDEOS.filter(function (v) { return activeFilter === 'all' || v.category === activeFilter; });
-
-      if (items.length === 0) {
-        grid.innerHTML =
-          '<div class="col-span-full text-center py-16 bg-white rounded-2xl border-2 border-dashed border-slate-200">' +
-            '<p class="font-bold text-slate-700" data-i18n="videos_page.empty_title">' + (i18n.get('videos_page.empty_title') || '') + '</p>' +
-            '<p class="text-sm text-slate-400 mt-1" data-i18n="videos_page.empty_desc">' + (i18n.get('videos_page.empty_desc') || '') + '</p>' +
-          '</div>';
-        return;
-      }
-
-      grid.innerHTML = items.map(videoCardHtml).join('');
-      if (window.AOS) { AOS.refreshHard(); }
-    }
-
-    function setActiveFilter(filter) {
-      activeFilter = filter;
-      document.querySelectorAll('.filter-pill').forEach(function (btn) {
-        btn.classList.toggle('is-active', btn.getAttribute('data-filter') === filter);
-      });
-      renderVideos();
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.filter-pill').forEach(function (btn) {
-        btn.addEventListener('click', function () { setActiveFilter(btn.getAttribute('data-filter')); });
-      });
-      renderVideos();
-    });
-
-    // Re-render video titles/captions/badges whenever the language changes
-    window.onLanguageChange = function () {
-      renderVideos();
-    };
   </script>
 </body>
 

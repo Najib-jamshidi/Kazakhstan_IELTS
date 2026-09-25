@@ -120,3 +120,9 @@ body {
   border-color: #2563eb;
   box-shadow: 0 10px 40px -12px rgba(30, 58, 138, 0.18);
 }
+
+/* ---------- Schedule: booked slot ---------- */
+.slot-busy {
+  background-color: #f1f5f9;
+  background-image: repeating-linear-gradient(135deg, transparent 0 6px, rgba(148, 163, 184, 0.18) 6px 8px);
+}
